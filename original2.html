@@ -1,0 +1,2380 @@
+
+<!doctype html>
+<html lang="es-PE">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N2NR9GC');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Contáctanos &#8211; MAF Perú</title>
+    <meta name='robots' content='max-image-preview:large' />
+    <link rel='dns-prefetch' href='//maps.googleapis.com' />
+    <link rel="alternate" type="application/rss+xml" title="MAF Perú &raquo; Feed" href="https://mafperu.com/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="MAF Perú &raquo; Feed de comentarios" href="https://mafperu.com/comments/feed/" />
+    <script>
+        window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/mafperu.com\/wp-includes\/js\/wp-emoji.js?ver=6.5","twemoji":"https:\/\/mafperu.com\/wp-includes\/js\/twemoji.js?ver=6.5"}};
+        /**
+         * @output wp-includes/js/wp-emoji-loader.js
+         */
+
+        /**
+         * Emoji Settings as exported in PHP via _print_emoji_detection_script().
+         * @typedef WPEmojiSettings
+         * @type {object}
+         * @property {?object} source
+         * @property {?string} source.concatemoji
+         * @property {?string} source.twemoji
+         * @property {?string} source.wpemoji
+         * @property {?boolean} DOMReady
+         * @property {?Function} readyCallback
+         */
+
+        /**
+         * Support tests.
+         * @typedef SupportTests
+         * @type {object}
+         * @property {?boolean} flag
+         * @property {?boolean} emoji
+         */
+
+        /**
+         * IIFE to detect emoji support and load Twemoji if needed.
+         *
+         * @param {Window} window
+         * @param {Document} document
+         * @param {WPEmojiSettings} settings
+         */
+        ( function wpEmojiLoader( window, document, settings ) {
+            if ( typeof Promise === 'undefined' ) {
+                return;
+            }
+
+            var sessionStorageKey = 'wpEmojiSettingsSupports';
+            var tests = [ 'flag', 'emoji' ];
+
+            /**
+             * Checks whether the browser supports offloading to a Worker.
+             *
+             * @since 6.3.0
+             *
+             * @private
+             *
+             * @returns {boolean}
+             */
+            function supportsWorkerOffloading() {
+                return (
+                    typeof Worker !== 'undefined' &&
+                    typeof OffscreenCanvas !== 'undefined' &&
+                    typeof URL !== 'undefined' &&
+                    URL.createObjectURL &&
+                    typeof Blob !== 'undefined'
+                );
+            }
+
+            /**
+             * @typedef SessionSupportTests
+             * @type {object}
+             * @property {number} timestamp
+             * @property {SupportTests} supportTests
+             */
+
+            /**
+             * Get support tests from session.
+             *
+             * @since 6.3.0
+             *
+             * @private
+             *
+             * @returns {?SupportTests} Support tests, or null if not set or older than 1 week.
+             */
+            function getSessionSupportTests() {
+                try {
+                    /** @type {SessionSupportTests} */
+                    var item = JSON.parse(
+                        sessionStorage.getItem( sessionStorageKey )
+                    );
+                    if (
+                        typeof item === 'object' &&
+                        typeof item.timestamp === 'number' &&
+                        new Date().valueOf() < item.timestamp + 604800 && // Note: Number is a week in seconds.
+                        typeof item.supportTests === 'object'
+                    ) {
+                        return item.supportTests;
+                    }
+                } catch ( e ) {}
+                return null;
+            }
+
+            /**
+             * Persist the supports in session storage.
+             *
+             * @since 6.3.0
+             *
+             * @private
+             *
+             * @param {SupportTests} supportTests Support tests.
+             */
+            function setSessionSupportTests( supportTests ) {
+                try {
+                    /** @type {SessionSupportTests} */
+                    var item = {
+                        supportTests: supportTests,
+                        timestamp: new Date().valueOf()
+                    };
+
+                    sessionStorage.setItem(
+                        sessionStorageKey,
+                        JSON.stringify( item )
+                    );
+                } catch ( e ) {}
+            }
+
+            /**
+             * Checks if two sets of Emoji characters render the same visually.
+             *
+             * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+             * scope. Everything must be passed by parameters.
+             *
+             * @since 4.9.0
+             *
+             * @private
+             *
+             * @param {CanvasRenderingContext2D} context 2D Context.
+             * @param {string} set1 Set of Emoji to test.
+             * @param {string} set2 Set of Emoji to test.
+             *
+             * @return {boolean} True if the two sets render the same.
+             */
+            function emojiSetsRenderIdentically( context, set1, set2 ) {
+                // Cleanup from previous test.
+                context.clearRect( 0, 0, context.canvas.width, context.canvas.height );
+                context.fillText( set1, 0, 0 );
+                var rendered1 = new Uint32Array(
+                    context.getImageData(
+                        0,
+                        0,
+                        context.canvas.width,
+                        context.canvas.height
+                    ).data
+                );
+
+                // Cleanup from previous test.
+                context.clearRect( 0, 0, context.canvas.width, context.canvas.height );
+                context.fillText( set2, 0, 0 );
+                var rendered2 = new Uint32Array(
+                    context.getImageData(
+                        0,
+                        0,
+                        context.canvas.width,
+                        context.canvas.height
+                    ).data
+                );
+
+                return rendered1.every( function ( rendered2Data, index ) {
+                    return rendered2Data === rendered2[ index ];
+                } );
+            }
+
+            /**
+             * Determines if the browser properly renders Emoji that Twemoji can supplement.
+             *
+             * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+             * scope. Everything must be passed by parameters.
+             *
+             * @since 4.2.0
+             *
+             * @private
+             *
+             * @param {CanvasRenderingContext2D} context 2D Context.
+             * @param {string} type Whether to test for support of "flag" or "emoji".
+             * @param {Function} emojiSetsRenderIdentically Reference to emojiSetsRenderIdentically function, needed due to minification.
+             *
+             * @return {boolean} True if the browser can render emoji, false if it cannot.
+             */
+            function browserSupportsEmoji( context, type, emojiSetsRenderIdentically ) {
+                var isIdentical;
+
+                switch ( type ) {
+                    case 'flag':
+                        /*
+                         * Test for Transgender flag compatibility. Added in Unicode 13.
+                         *
+                         * To test for support, we try to render it, and compare the rendering to how it would look if
+                         * the browser doesn't render it correctly (white flag emoji + transgender symbol).
+                         */
+                        isIdentical = emojiSetsRenderIdentically(
+                            context,
+                            '\uD83C\uDFF3\uFE0F\u200D\u26A7\uFE0F', // as a zero-width joiner sequence
+                            '\uD83C\uDFF3\uFE0F\u200B\u26A7\uFE0F' // separated by a zero-width space
+                        );
+
+                        if ( isIdentical ) {
+                            return false;
+                        }
+
+                        /*
+                         * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+                         * so gives us an easy test for full support.
+                         *
+                         * To test for support, we try to render it, and compare the rendering to how it would look if
+                         * the browser doesn't render it correctly ([U] + [N]).
+                         */
+                        isIdentical = emojiSetsRenderIdentically(
+                            context,
+                            '\uD83C\uDDFA\uD83C\uDDF3', // as the sequence of two code points
+                            '\uD83C\uDDFA\u200B\uD83C\uDDF3' // as the two code points separated by a zero-width space
+                        );
+
+                        if ( isIdentical ) {
+                            return false;
+                        }
+
+                        /*
+                         * Test for English flag compatibility. England is a country in the United Kingdom, it
+                         * does not have a two letter locale code but rather a five letter sub-division code.
+                         *
+                         * To test for support, we try to render it, and compare the rendering to how it would look if
+                         * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+                         */
+                        isIdentical = emojiSetsRenderIdentically(
+                            context,
+                            // as the flag sequence
+                            '\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F',
+                            // with each code point separated by a zero-width space
+                            '\uD83C\uDFF4\u200B\uDB40\uDC67\u200B\uDB40\uDC62\u200B\uDB40\uDC65\u200B\uDB40\uDC6E\u200B\uDB40\uDC67\u200B\uDB40\uDC7F'
+                        );
+
+                        return ! isIdentical;
+                    case 'emoji':
+                        /*
+                         * Four and twenty blackbirds baked in a pie.
+                         *
+                         * To test for Emoji 15.0 support, try to render a new emoji: Blackbird.
+                         *
+                         * The Blackbird is a ZWJ sequence combining 🐦 Bird and ⬛ large black square.,
+                         *
+                         * 0x1F426 (\uD83D\uDC26) == Bird
+                         * 0x200D == Zero-Width Joiner (ZWJ) that links the code points for the new emoji or
+                         * 0x200B == Zero-Width Space (ZWS) that is rendered for clients not supporting the new emoji.
+                         * 0x2B1B == Large Black Square
+                         *
+                         * When updating this test for future Emoji releases, ensure that individual emoji that make up the
+                         * sequence come from older emoji standards.
+                         */
+                        isIdentical = emojiSetsRenderIdentically(
+                            context,
+                            '\uD83D\uDC26\u200D\u2B1B', // as the zero-width joiner sequence
+                            '\uD83D\uDC26\u200B\u2B1B' // separated by a zero-width space
+                        );
+
+                        return ! isIdentical;
+                }
+
+                return false;
+            }
+
+            /**
+             * Checks emoji support tests.
+             *
+             * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+             * scope. Everything must be passed by parameters.
+             *
+             * @since 6.3.0
+             *
+             * @private
+             *
+             * @param {string[]} tests Tests.
+             * @param {Function} browserSupportsEmoji Reference to browserSupportsEmoji function, needed due to minification.
+             * @param {Function} emojiSetsRenderIdentically Reference to emojiSetsRenderIdentically function, needed due to minification.
+             *
+             * @return {SupportTests} Support tests.
+             */
+            function testEmojiSupports( tests, browserSupportsEmoji, emojiSetsRenderIdentically ) {
+                var canvas;
+                if (
+                    typeof WorkerGlobalScope !== 'undefined' &&
+                    self instanceof WorkerGlobalScope
+                ) {
+                    canvas = new OffscreenCanvas( 300, 150 ); // Dimensions are default for HTMLCanvasElement.
+                } else {
+                    canvas = document.createElement( 'canvas' );
+                }
+
+                var context = canvas.getContext( '2d', { willReadFrequently: true } );
+
+                /*
+                 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+                 * it doesn't work when the font is bolder than 500 weight. So, we
+                 * check for bold rendering support to avoid invisible emoji in Chrome.
+                 */
+                context.textBaseline = 'top';
+                context.font = '600 32px Arial';
+
+                var supports = {};
+                tests.forEach( function ( test ) {
+                    supports[ test ] = browserSupportsEmoji( context, test, emojiSetsRenderIdentically );
+                } );
+                return supports;
+            }
+
+            /**
+             * Adds a script to the head of the document.
+             *
+             * @ignore
+             *
+             * @since 4.2.0
+             *
+             * @param {string} src The url where the script is located.
+             *
+             * @return {void}
+             */
+            function addScript( src ) {
+                var script = document.createElement( 'script' );
+                script.src = src;
+                script.defer = true;
+                document.head.appendChild( script );
+            }
+
+            settings.supports = {
+                everything: true,
+                everythingExceptFlag: true
+            };
+
+            // Create a promise for DOMContentLoaded since the worker logic may finish after the event has fired.
+            var domReadyPromise = new Promise( function ( resolve ) {
+                document.addEventListener( 'DOMContentLoaded', resolve, {
+                    once: true
+                } );
+            } );
+
+            // Obtain the emoji support from the browser, asynchronously when possible.
+            new Promise( function ( resolve ) {
+                var supportTests = getSessionSupportTests();
+                if ( supportTests ) {
+                    resolve( supportTests );
+                    return;
+                }
+
+                if ( supportsWorkerOffloading() ) {
+                    try {
+                        // Note that the functions are being passed as arguments due to minification.
+                        var workerScript =
+                            'postMessage(' +
+                            testEmojiSupports.toString() +
+                            '(' +
+                            [
+                                JSON.stringify( tests ),
+                                browserSupportsEmoji.toString(),
+                                emojiSetsRenderIdentically.toString()
+                            ].join( ',' ) +
+                            '));';
+                        var blob = new Blob( [ workerScript ], {
+                            type: 'text/javascript'
+                        } );
+                        var worker = new Worker( URL.createObjectURL( blob ), { name: 'wpTestEmojiSupports' } );
+                        worker.onmessage = function ( event ) {
+                            supportTests = event.data;
+                            setSessionSupportTests( supportTests );
+                            worker.terminate();
+                            resolve( supportTests );
+                        };
+                        return;
+                    } catch ( e ) {}
+                }
+
+                supportTests = testEmojiSupports( tests, browserSupportsEmoji, emojiSetsRenderIdentically );
+                setSessionSupportTests( supportTests );
+                resolve( supportTests );
+            } )
+                // Once the browser emoji support has been obtained from the session, finalize the settings.
+                .then( function ( supportTests ) {
+                    /*
+                     * Tests the browser support for flag emojis and other emojis, and adjusts the
+                     * support settings accordingly.
+                     */
+                    for ( var test in supportTests ) {
+                        settings.supports[ test ] = supportTests[ test ];
+
+                        settings.supports.everything =
+                            settings.supports.everything && settings.supports[ test ];
+
+                        if ( 'flag' !== test ) {
+                            settings.supports.everythingExceptFlag =
+                                settings.supports.everythingExceptFlag &&
+                                settings.supports[ test ];
+                        }
+                    }
+
+                    settings.supports.everythingExceptFlag =
+                        settings.supports.everythingExceptFlag &&
+                        ! settings.supports.flag;
+
+                    // Sets DOMReady to false and assigns a ready function to settings.
+                    settings.DOMReady = false;
+                    settings.readyCallback = function () {
+                        settings.DOMReady = true;
+                    };
+                } )
+                .then( function () {
+                    return domReadyPromise;
+                } )
+                .then( function () {
+                    // When the browser can not render everything we need to load a polyfill.
+                    if ( ! settings.supports.everything ) {
+                        settings.readyCallback();
+
+                        var src = settings.source || {};
+
+                        if ( src.concatemoji ) {
+                            addScript( src.concatemoji );
+                        } else if ( src.wpemoji && src.twemoji ) {
+                            addScript( src.twemoji );
+                            addScript( src.wpemoji );
+                        }
+                    }
+                } );
+        } )( window, document, window._wpemojiSettings );
+    </script>
+    <style id='wp-emoji-styles-inline-css'>
+
+        img.wp-smiley, img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+
+    <style>
+
+        .card{
+            border: none;
+        }
+        .img_mafita1{
+            width: 13vw;
+        }
+
+        .card_1{
+            margin: 0;
+            background-color: #EB0A1E;
+
+        }
+
+        .card_2{
+            margin: 0;
+            border: none;
+            padding: 50px;
+
+        }
+
+        h3{
+            font-size: 2vw;
+        }
+
+        p{
+            font-size: 2vw;
+        }
+
+        hr{
+            border: 1px solid #FF0000;
+        }
+
+        .card_1 tr{
+            border: #EB0A1E;
+        }
+
+        .card_1 th{
+            background-color: #EB0A1E;
+            color: #F7F7F7;
+            align-content:center;
+        }
+
+        .cuerpo1{
+            font-weight:normal;
+            padding-left: 0;
+        }
+
+        .btn_continuar{
+            background-color: #FF9191;
+            border-radius: 20px;
+            padding: 10px 20px;
+            border: none;
+            color: #F7F7F7;
+
+        }
+
+        .btn_continuar:enabled {
+            background-color: #EB0A1E; /* Color cuando está habilitado */
+            /* Otros estilos para tu botón cuando está habilitado */
+        }
+
+        .btn_atras{
+            background-color: #EB0A1E;
+            border-radius: 20px;
+            padding: 10px 20px;
+            border: none;color: #F7F7F7;
+        }
+        .form-check-label{
+            font-size: 1.2vw;
+        }
+        /* CSS para cambiar el color del checkbox cuando está marcado */
+        .form-check-input:checked {
+            background-color: #EB0A1E;
+            border-color: #EB0A1E;
+        }
+        .form-check-input {
+            border-color: #EB0A1E;
+            border-width: 2px; /* Ajusta el grosor del borde a tu preferencia */
+            border-radius: 0px;
+        }
+
+        .img_paginador_atras, .img_paginador_siguiente{
+            width: 1.3vw;
+        }
+
+        .img_paginador_atras{
+            margin-right: 10px;
+        }
+
+        .img_paginador_siguiente{
+            margin-left: 10px;
+        }
+
+        .barra{
+            background-color: red; padding: 15px 0px 15px 10px; color: white; font-weight: bold;
+        }
+
+        .img_mafita1{
+            float: right;
+        }
+
+        .cuerpo2{
+            display: flex;
+        }
+
+        #cboTipoDocumento{
+            border-radius: 0px;
+        }
+
+        #txtNroDocumento{
+            border-radius: 0px;
+        }
+
+        #step2{
+            display: none;
+        }
+
+        .card_datos{
+            display: flex; border: none
+        }
+
+        .card_datos .card{
+            width: 70%; display: flex; flex-wrap: wrap; gap: 1rem; padding: 20px; border: none;
+        }
+
+        .tab-content{
+            margin-top: 20px;
+        }
+
+    </style>
+    <link rel='stylesheet' id='wp-block-library-css' href='https://mafperu.com/wp-includes/css/dist/block-library/style.css?ver=6.5' media='all' />
+    <style id='classic-theme-styles-inline-css'>
+        /**
+         * These rules are needed for backwards compatibility.
+         * They should match the button element rules in the base theme.json file.
+         */
+        .wp-block-button__link {
+            color: #ffffff;
+            background-color: #32373c;
+            border-radius: 9999px; /* 100% causes an oval, but any explicit but really high value retains the pill shape. */
+
+            /* This needs a low specificity so it won't override the rules from the button element if defined in theme.json. */
+            box-shadow: none;
+            text-decoration: none;
+
+            /* The extra 2px are added to size solids the same as the outline versions.*/
+            padding: calc(0.667em + 2px) calc(1.333em + 2px);
+
+            font-size: 1.125em;
+        }
+
+        .wp-block-file__button {
+            background: #32373c;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+    </style>
+    <style id='global-styles-inline-css'>
+        body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+        .wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+        :where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+        :where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+        .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='https://mafperu.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.9.3' media='all' />
+    <link rel='stylesheet' id='mafperu2023-style-css' href='https://mafperu.com/wp-content/themes/mafperu2023/style.css?ver=1.0.1' media='all' />
+    <link rel='stylesheet' id='custom-style-css' href='https://mafperu.com/wp-content/themes/mafperu2023/css/custom.css?ver=6.5' media='all' />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4zRLMwDW-sk3yUXcotzNbVDqC2V__dwM" id="js-google-defer-js"></script>
+    <link rel="https://api.w.org/" href="https://mafperu.com/wp-json/" /><link rel="alternate" type="application/json" href="https://mafperu.com/wp-json/wp/v2/pages/504" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mafperu.com/xmlrpc.php?rsd" />
+    <meta name="generator" content="WordPress 6.5" />
+    <link rel="canonical" href="https://mafperu.com/contactanos/" />
+    <link rel='shortlink' href='https://mafperu.com/?p=504' />
+    <link rel="alternate" type="application/json+oembed" href="https://mafperu.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmafperu.com%2Fcontactanos%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="https://mafperu.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmafperu.com%2Fcontactanos%2F&#038;format=xml" />
+    <meta name="generator" content="Site Kit by Google 1.123.1" />		<style type="text/css">
+    .site-title,
+    .site-description {
+        position: absolute;
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+</style>
+    <link rel="icon" href="https://mafperu.com/wp-content/uploads/2023/05/cropped-android-chrome-512x512-1-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://mafperu.com/wp-content/uploads/2023/05/cropped-android-chrome-512x512-1-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://mafperu.com/wp-content/uploads/2023/05/cropped-android-chrome-512x512-1-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://mafperu.com/wp-content/uploads/2023/05/cropped-android-chrome-512x512-1-270x270.png" />
+
+</head>
+
+<body class="page-template page-template-page-contact page-template-page-contact-php page page-id-504 wp-custom-logo">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2NR9GC"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="page" class="site">
+    <!--
+        <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
+    -->
+    <header id="masthead" class="site-header   p-0 m-0">
+
+
+
+        <div class="conteNavbar row p-0 m-0 bg-light">
+            <nav class="navbar navbar-expand-lg offset-1 col-10 col-xl-10 offset-xl-1  p-0 position-relative">
+                <!-- Brand and toggle button -->
+                <h1 class="logo d-flex justify-content-center align-items-center me-3 mb-0 overflow-hidden">
+                    <a class="navbar-brand d-block" href="https://mafperu.com/" rel="home">
+                        <img src="https://mafperu.com/wp-content/uploads/2023/04/logo-mafperu.webp" width="142" height="72" class="w-100 h-auto" alt="Logo Maf Perú">
+
+                    </a>
+                    <span class="brandname">MAF Perú</span>
+                </h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- End -->
+                <!-- Your website Links -->
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul id="menu-principal" class="navbar-nav ms-auto mb-2 mb-md-0 $classAlignMenu"><li  id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-87"><a href="https://mafperu.com/nosotros/" class="nav-link ">Nosotros</a></li>
+                        <li  id="menu-item-13" class="btnAllProduct menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-13"><a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false">Productos</a>
+                            <ul class="dropdown-menu  d-lg-none depth_0" >
+                                <li  id="menu-item-376" class="category-child menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children dropdown nav-item nav-item-376 dropdown-menu-child-item dropdown-menu-end at_depth_1"><a href="https://mafperu.com/category/productos/credito-vehicular/" class="dropdown-item  dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false">Crédito Vehicular</a>
+                                    <ul class="dropdown-menu dropdown-submenu  d-lg-none depth_1" >
+                                        <li  id="menu-item-387" class="menu-item menu-item-type-post_type menu-item-object-productos nav-item nav-item-387"><a href="https://mafperu.com/productos/plan-toyota-life/" class="dropdown-item ">Plan Toyota Life</a></li>
+                                        <li  id="menu-item-386" class="menu-item menu-item-type-post_type menu-item-object-productos nav-item nav-item-386"><a href="https://mafperu.com/productos/plan-emprendedor/" class="dropdown-item ">Plan Emprendedor</a></li>
+                                        <li  id="menu-item-382" class="menu-item menu-item-type-post_type menu-item-object-productos nav-item nav-item-382"><a href="https://mafperu.com/productos/financiamiento-de-autos-seminuevos/" class="dropdown-item ">Financiamiento de Autos Seminuevos</a></li>
+                                        <li  id="menu-item-385" class="menu-item menu-item-type-post_type menu-item-object-productos nav-item nav-item-385"><a href="https://mafperu.com/productos/plan-taxi/" class="dropdown-item ">Plan Taxi</a></li>
+                                        <li  id="menu-item-384" class="menu-item menu-item-type-post_type menu-item-object-productos nav-item nav-item-384"><a href="https://mafperu.com/productos/plan-renueve/" class="dropdown-item ">Plan Renueve</a></li>
+                                        <li  id="menu-item-383" class="menu-item menu-item-type-post_type menu-item-object-productos nav-item nav-item-383"><a href="https://mafperu.com/productos/plan-tradicional/" class="dropdown-item ">Plan Tradicional</a></li>
+                                    </ul>
+                                </li>
+                                <li  id="menu-item-1574" class="category-child menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children dropdown nav-item nav-item-1574 dropdown-menu-child-item dropdown-menu-end at_depth_1"><a href="https://mafperu.com/category/productos/leasing/" class="dropdown-item  dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false">Leasing</a>
+                                    <ul class="dropdown-menu dropdown-submenu  d-lg-none depth_1" >
+                                        <li  id="menu-item-1573" class="menu-item menu-item-type-post_type menu-item-object-productos nav-item nav-item-1573"><a href="https://mafperu.com/productos/kinto-one/" class="dropdown-item ">KINTO ONE</a></li>
+                                        <li  id="menu-item-381" class="menu-item menu-item-type-post_type menu-item-object-productos nav-item nav-item-381"><a href="https://mafperu.com/productos/leasing/" class="dropdown-item ">Leasing</a></li>
+                                    </ul>
+                                </li>
+                                <li  id="menu-item-377" class="category-child menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children dropdown nav-item nav-item-377 dropdown-menu-child-item dropdown-menu-end at_depth_1"><a href="https://mafperu.com/category/productos/prestamo-personal/" class="dropdown-item  dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false">Préstamo Personal</a>
+                                    <ul class="dropdown-menu dropdown-submenu  d-lg-none depth_1" >
+                                        <li  id="menu-item-379" class="menu-item menu-item-type-post_type menu-item-object-productos nav-item nav-item-379"><a href="https://mafperu.com/productos/prestamo-personal-por-convenio/" class="dropdown-item ">Préstamo Personal por Convenio</a></li>
+                                        <li  id="menu-item-380" class="menu-item menu-item-type-post_type menu-item-object-productos nav-item nav-item-380"><a href="https://mafperu.com/productos/prestamo-personal-con-garantia/" class="dropdown-item ">Préstamo Personal con Garantía</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li  id="menu-item-836" class="menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-836"><a href="/promociones" class="nav-link ">Promociones</a></li>
+                        <li  id="menu-item-15" class="border-bottom-0 enableDropdown allCare menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-15"><a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false">Atención al Cliente</a>
+                            <ul class="dropdown-menu  d-lg-none depth_0" >
+                                <li  id="menu-item-460" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-460"><a href="https://mafperu.com/informacion-al-usuario/" class="dropdown-item ">Información al Usuario</a></li>
+                                <li  id="menu-item-436" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-436"><a href="https://mafperu.com/preguntas-frecuentes/" class="dropdown-item ">Preguntas Frecuentes</a></li>
+                            </ul>
+                        </li>
+                        <li  id="menu-item-532" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-504 current_page_item nav-item nav-item-532"><a href="https://mafperu.com/contactanos/" class="nav-link active">Contáctanos</a></li>
+                        <li  id="menu-item-16" class="btnCorCurRed menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-16"><a href="https://zonasegura.mafperu.com/portalclientes/" class="nav-link ">Mi Portal Web MAF</a></li>
+                        <li  id="menu-item-17" class="btnCorCurRed menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-17"><a href="https://mafperu.com/financia-tu-auto-online" class="nav-link ">Solicita tu crédito</a></li>
+                    </ul>
+
+
+
+
+
+                </div>
+
+                <!-- End -->
+            </nav>
+        </div>
+        <div class="row bg-white p-5 mx-0 collapse subMenuDesktop" id="subMenuDesktop">
+            <div class="subMenucategoryProduct col-lg-5 offset-lg-1 d-none">
+                <ul class="nav nav-pills  justify-content-center" id="myTab" role="tablist">					<li class="nav-item" role="presentation">
+                    <button class="nav-link btn-submenu-product active" id="credito-vehicular-tab" data-bs-toggle="tab" data-bs-target="#credito-vehicular-tab-pane" type="button" role="tab" aria-controls="credito-vehicular-tab-pane" aria-selected="true">Crédito Vehicular</button>
+                </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link btn-submenu-product " id="leasing-tab" data-bs-toggle="tab" data-bs-target="#leasing-tab-pane" type="button" role="tab" aria-controls="leasing-tab-pane" aria-selected="true">Leasing</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link btn-submenu-product " id="prestamo-personal-tab" data-bs-toggle="tab" data-bs-target="#prestamo-personal-tab-pane" type="button" role="tab" aria-controls="prestamo-personal-tab-pane" aria-selected="true">Préstamo Personal</button>
+                    </li>
+                </ul><div class="tab-content " id="myTabContent">						<div class="tab-pane tab-pane-submenuproduct  fade show active" id="credito-vehicular-tab-pane" role="tabpanel" aria-labelledby="credito-vehicular-tab" tabindex="0">
+                <ul>								<li><a href="https://mafperu.com/productos/plan-toyota-life/" target="_self">Plan Toyota Life</a></li>
+                    <li><a href="https://mafperu.com/productos/plan-emprendedor/" target="_self">Plan Emprendedor</a></li>
+                    <li><a href="https://mafperu.com/productos/financiamiento-de-autos-seminuevos/" target="_self">Financiamiento de Autos Seminuevos</a></li>
+                    <li><a href="https://mafperu.com/productos/plan-taxi/" target="_self">Plan Taxi</a></li>
+                    <li><a href="https://mafperu.com/productos/plan-renueve/" target="_self">Plan Renueve</a></li>
+                    <li><a href="https://mafperu.com/productos/plan-tradicional/" target="_self">Plan Tradicional</a></li>
+                </ul>
+            </div>
+                <div class="tab-pane tab-pane-submenuproduct  fade " id="leasing-tab-pane" role="tabpanel" aria-labelledby="leasing-tab" tabindex="0">
+                    <ul>								<li><a href="https://mafperu.com/productos/kinto-one/" target="_self">KINTO ONE</a></li>
+                        <li><a href="https://mafperu.com/productos/leasing/" target="_self">Leasing</a></li>
+                    </ul>
+                </div>
+                <div class="tab-pane tab-pane-submenuproduct  fade " id="prestamo-personal-tab-pane" role="tabpanel" aria-labelledby="prestamo-personal-tab" tabindex="0">
+                    <ul>								<li><a href="https://mafperu.com/productos/prestamo-personal-por-convenio/" target="_self">Préstamo Personal por Convenio</a></li>
+                        <li><a href="https://mafperu.com/productos/prestamo-personal-con-garantia/" target="_self">Préstamo Personal con Garantía</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            </div>
+            <div class="subMenuAllCare col-lg-5 offset-lg-1 d-none">
+                <ul class="listAllCare">
+
+                </ul>
+            </div>
+            <div class="col-lg-5">
+                <img class="img-fluid" src="https://mafperu.com/wp-content/themes/mafperu2023/images/menu-product-desk.webp">
+            </div>
+        </div>
+    </header><!-- #masthead -->
+    <script>
+
+        document.addEventListener('DOMContentLoaded',()=>{
+            let listAllCare = document.querySelector('.listAllCare');
+            let allCare = document.querySelector('.allCare').querySelectorAll('.menu-item');
+            console.log(document.getElementById('masthead').clientHeight, document.getElementById('masthead').offsetHeight);
+
+            let divwpadminbar =  document.getElementById('wpadminbar');
+            let wpadminbarHeight = 0;
+            if(divwpadminbar){
+                wpadminbarHeight = document.getElementById('wpadminbar').offsetHeight;
+            }
+
+
+            console.log('wpadminbarHeight', wpadminbarHeight);
+
+            let mastheadOffsetHeight = document.getElementById('masthead').offsetHeight;
+            let primary = document.getElementById('primary');console.log('mastheadOffsetHeight',mastheadOffsetHeight)
+            primary.style.setProperty("padding-top",(mastheadOffsetHeight - wpadminbarHeight)+"px", "important");
+
+            //console.log('allCare', allCare)
+            allCare.forEach(care => {
+                console.log(care);
+                let createLi = document.createElement("li");
+                let createLink = document.createElement('a');
+                createLink.href = care.childNodes[0].href
+                createLink.textContent = care.childNodes[0].innerText
+
+                createLi.appendChild(createLink)
+                listAllCare.appendChild(createLi)
+
+            })
+            let btnCloseHT = document.querySelector('.btnCloseHT');
+            let headerTop = document.querySelector('.headerTop');
+            if(headerTop){
+                headerTop.addEventListener('mouseenter',hideSubMenuDesktop)
+
+                btnCloseHT.addEventListener('click',closeHeaderTop)
+            }
+
+            let menuAllItem = document.querySelectorAll('.menu-item');
+            menuAllItem.forEach(menuItem => {
+                menuItem.addEventListener('mouseenter', event => {
+                    console.log(menuItem.classList.contains('btnAllProduct'));
+                    if(!menuItem.classList.contains('btnAllProduct')){
+                        hideSubMenuDesktop();
+                    }
+                })
+            })
+
+            let btnAllProduct = document.querySelector('.btnAllProduct')
+            let btnAllCare = document.querySelector('.allCare')
+            //btnAllProduct.addEventListener('click',showSubMenuDesktop)
+            btnAllProduct.addEventListener('mouseenter',showSubMenuDesktop)
+            btnAllCare.addEventListener('mouseenter',showSubMenuDesktop)
+
+
+
+            var myCollapse = document.getElementById('subMenuDesktop')
+            myCollapse.addEventListener("mouseleave", (e) => {
+                console.log('mouseleave');
+                myCollapse.classList.remove('show')
+            });
+
+
+            // let allBtnSubMenuProductTop = document.querySelectorAll('.btn-submenu-product');
+            // //console.log(allBtnSubMenuProductTop);
+            // allBtnSubMenuProductTop.forEach(btnSubMenu => {
+
+            // 	console.log(btnSubMenu);
+            // 	btnSubMenu.addEventListener('mouseover ', (e) => {
+            // 		console.log('mouseover');
+            // 	})
+            // })
+
+            const btns = document.querySelectorAll(".btn-submenu-product");
+            const tabContents = document.querySelectorAll(".tab-pane-submenuproduct");
+            btns.forEach((btn) => {
+                btn.addEventListener("mouseover", () => {
+                    btns.forEach((btn) => btn.classList.remove("active"));
+                    tabContents.forEach((tabContent) => tabContent.classList.remove("active"));
+                    btn.classList.add("active");
+                    //hideTabsConte();
+                    document.querySelector(btn.dataset.bsTarget).classList.add("show","active");
+                });
+            })
+
+        })
+
+        // function hideTabsConte(){
+
+        // 	const tabContents = document.querySelectorAll(".tab-pane-submenuproduct");
+        // 	console.log(tabContents);
+        // 	tabContents.forEach((tab) => {
+        // 		tab.classList.remove("active");
+        // 	})
+        // }
+
+        function closeHeaderTop(e){
+            e.preventDefault();
+            let conteHedaerTop = document.querySelector('.conteHedaerTop');
+            conteHedaerTop.classList.add('d-none');
+            let divwpadminbar =  document.getElementById('wpadminbar');
+            let wpadminbarHeight = 0;
+            if(divwpadminbar){
+                wpadminbarHeight = document.getElementById('wpadminbar').offsetHeight;
+            }
+
+
+            console.log('wpadminbarHeight', wpadminbarHeight);
+
+            let mastheadOffsetHeight = document.getElementById('masthead').offsetHeight;;
+            let primary = document.getElementById('primary');console.log('mastheadOffsetHeight',mastheadOffsetHeight)
+            primary.style.setProperty("padding-top",(mastheadOffsetHeight - wpadminbarHeight)+"px", "important");
+        }
+        //allCare
+
+        function showSubMenuDesktop(){
+            console.log('showSubMenuDesktop',this.classList.contains('btnAllProduct'));
+            let subMenucategoryProduct = document.querySelector('.subMenucategoryProduct')
+            let subMenuAllCare = document.querySelector('.subMenuAllCare')
+
+            if(this.classList.contains('btnAllProduct')){
+                subMenuAllCare.classList.add('d-none')
+                subMenucategoryProduct.classList.remove('d-none')
+            }
+            if(this.classList.contains('allCare')){
+                subMenucategoryProduct.classList.add('d-none')
+                subMenuAllCare.classList.remove('d-none')
+            }
+
+            var myCollapse = document.getElementById('subMenuDesktop')
+            if(screen.width >= 992){
+                if(myCollapse.classList.contains('show')){
+                    //myCollapse.classList.remove('show')
+                }else{
+                    myCollapse.classList.add('show')
+                }
+            }else{
+                myCollapse.classList.remove('show')
+            }
+            // console.log(myCollapse)
+            console.log(myCollapse.classList.contains('show'))
+        }
+
+
+        function hideSubMenuDesktop(){
+            var myCollapse = document.getElementById('subMenuDesktop')
+            myCollapse.classList.remove('show')
+
+            let subMenucategoryProduct = document.querySelector('.subMenucategoryProduct')
+            let subMenuAllCare = document.querySelector('.subMenuAllCare')
+
+            if(!subMenuAllCare.classList.contains('d-none')){
+                subMenuAllCare.classList.add('d-none')
+            }
+            if(!subMenucategoryProduct.classList.contains('d-none')){
+                subMenucategoryProduct.classList.add('d-none')
+            }
+        }
+        function reportWindowSize() {
+            console.log(window.innerWidth);
+            var myCollapse = document.getElementById('subMenuDesktop')
+            if(window.innerWidth < 992){
+                myCollapse.classList.remove('show')
+            }
+
+            let divwpadminbar =  document.getElementById('wpadminbar');
+            let wpadminbarHeight = 0;
+            if(divwpadminbar){
+                wpadminbarHeight = document.getElementById('wpadminbar').offsetHeight;
+            }
+
+
+            console.log('wpadminbarHeight', wpadminbarHeight);
+
+
+            let mastheadOffsetHeight = document.getElementById('masthead').offsetHeight;;
+            let primary = document.getElementById('primary');console.log('mastheadOffsetHeight',mastheadOffsetHeight)
+            primary.style.setProperty("padding-top",(mastheadOffsetHeight-wpadminbarHeight)+"px", "important");
+        }
+        window.onresize = reportWindowSize;
+    </script>
+
+    <main id="primary" class="site-main container-fluid page-contact p-0">
+        <section class="section-0 w-100">
+            <picture id="bannerPrincipal">
+                <source media="(max-width: 767px)" srcset="<br />
+<b>Notice</b>:  Trying to access array offset on value of type null in <b>/home/customer/www/mafperu.com/public_html/wp-content/themes/mafperu2023/page-contact.php</b> on line <b>29</b><br />
+">
+                <source media="(max-width: 1200px)" srcset="">
+                <source media="(max-width: 1920px)" srcset="">
+
+                <img src="" class="w-100" alt="">
+            </picture>
+
+        </section>
+<!--        <section class="section-1 row m-0">-->
+<!--            <div class="col-12 offset-md-2 col-md-8">-->
+<!--                <h2 class="text-center">Contáctanos</h2>-->
+<!--                <p class="text-center">Para cualquier consulta o solicitud que necesites absolver, no dudes en dejarnos tus datos en el siguiente formulario para poder ayudarte, uno de nuestros asesores de servicios MAF se pondrá en contacto a la brevedad posible.</p>-->
+<!--            </div>-->
+<!--        </section>-->
+        <section class="section-2 row m-0">
+            <div class="col-12 offset-md-1 col-md-10">
+                <!-- block maf init -->
+
+
+                <div class="container body-content">
+
+
+                    <style type="text/css">
+                        #frmRegistro #btnSubmit {
+
+                            color: #fff;
+                            text-transform: uppercase;
+                            width: 30%;
+                            font-size: 24px;
+                            line-height: 40px;
+                            border: none;
+                            padding: 0;
+                        }
+                        .form-group{
+                            margin-bottom: 10px;
+                            margin-top: 10px;
+                        }
+                        .conteTerminos {
+                            position: fixed;
+                            width: 100vw;
+                            height: 100vh;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            top: 0;
+                            left: 0;
+                            justify-content: center;
+                            align-items: center;
+                            z-index: 110;
+                        }
+                        .conteTerminos .terminnos {
+                            height: 95vh;
+                            width: 80vw;
+                            max-width: 720px;
+                            padding: 3rem;
+                            border-radius: 7px;
+                            position: relative;
+                            background-color: #fff;
+                            border-top-style: solid;
+                            border-top-width: 5px;
+                            overflow-x: hidden;
+                            color:#b9b8b8;
+                            font-size: 14px;
+                        }
+
+                        .conteTerminos .terminnos .tyc {
+                            overflow-y: auto;
+                        }
+                        .conteTerminos .terminnos .btnClose {
+                            width: 30px;
+                            height: 30px;
+                            background-color: #08255a;
+                            display: block;
+                            border-radius: 50%;
+                            color: #fff;
+                            font-weight: bold;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 19px;
+                            position: absolute;
+                            right: 10px;
+                            top: 10px;
+                            cursor: pointer;
+                            text-decoration: none;
+
+
+                        }
+                    </style>
+                    <!--INI EXP(CMZ) 18052021 REQ19125-->
+                    <form id="frmRegistro" action="https://portal.mafperu.com/WebMAF/Home/RegistrarContacto" enctype="multipart/form-data" method="post"><input name="__RequestVerificationToken" type="hidden" value="RLIpkB3tt3R3mtuE6LHF3qyi4vwe6XfBa8E-flA4yLlFgQ0cRk8dpq4ofac_hC7pqzDcQzIesYjHaTHfpvVPbBoe0IY9oLD-JkLFrHmriaI1">    <div class="row">
+                        <input id="errors" name="errors" type="hidden" value="True">
+                        <input id="hdSubMotivoCod" name="hdSubMotivoCod" type="hidden" value="Id">
+                        <input id="hdSubMotivoDes" name="hdSubMotivoDes" type="hidden" value="Des">
+                        <input data-val="true" data-val-number="El campo TipoCaso debe ser un número." data-val-required="Seleccione el tipo de caso" id="hdnTipoCaso" name="TipoCaso" type="hidden" value="0">
+
+                        <div id="step1">
+                            <div class="card-group">
+                                <div class="card">
+                                    <div class="card_1">
+                                        <div class="card-body"  >
+                                            <table class="table">
+                                                <tr style="">
+                                                    <th scope="col">
+                                                        <div class="cuerpo1">
+                                                            <h3>Formulario Web</h3>
+                                                            <br>
+                                                            <p>¿Tienes alguna consulta o solicitud?</p>
+                                                            <p>Este es el lugar.</p>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <img  class="img_mafita1" src="https://i.imgur.com/JVs2YBI.png" style="" >
+                                                    </th>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card_2">
+                                        <div class="card-body">
+                                            <div >
+                                                <h4 class="card-title">Identifícate ingresando tu número de documento</h4>
+                                                <br>
+                                                <div class="cuerpo2" style="">
+                                                    <div class="form-group col-md-6">
+                                                        <select class="form-control" data-val="true" data-val-required="Seleccione" id="cboTipoDocumento" name="cboTipoDocumento" style=""></select>
+                                                        <span class="field-validation-valid text-danger validator" data-valmsg-for="cboTipoDocumento" data-valmsg-replace="true" id="vldTipoDocumento"></span>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Número de documento inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de documento" id="txtNroDocumento" name="txtNroDocumento" placeholder="Número de documento" type="text" value="" style="">
+                                                        <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNroDocumento" data-valmsg-replace="true" id="vldNroDocumento"></span>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onchange="toggleButton()">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        He leído y acepto las condiciones de políticas de seguridad y privacidad.
+                                                    </label>
+                                                </div>
+                                                <br>
+                                                <button type="button" class="btn_continuar" id="btnContinuar"  onclick="showStep(2)"  disabled>Continuar</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pestaña 2: Información Adicional -->
+                        <div id="step2" style="">
+                            <div class="card" style="border: none">
+                                <div class="card_3">
+                                    <div class="card-body" style="">
+                                        <div class="barra" style="">Formulario Web</div>
+                                        </br>
+                                        <div>
+                                            <nav class="nav nav-pills" id="nav-tab" role="tablist" style="display: flex; justify-content: space-between;">
+                                                <a class="nav-link active" id="nav-datos-tab" data-bs-toggle="tab" href="#nav-datos" role="tab" aria-controls="nav-datos" aria-selected="true" style="border: 2px solid">1. Tus Datos<img src="https://i.imgur.com/LDg9LLO.png" style="width: 1.2vw; margin-left: 8px"></a>
+                                                <a class="nav-link" id="nav-caso-tab" data-bs-toggle="tab" href="#nav-caso" role="tab" aria-controls="nav-caso" aria-selected="false" style="border: 2px solid">2. Detállanos tu caso<img src="https://i.imgur.com/D4R7VOJ.png" style="width: 1.2vw; margin-left: 8px"></a>
+                                                <a class="nav-link" id="nav-confirmacion-tab" data-bs-toggle="tab" href="#nav-confirmacion" role="tab" aria-controls="nav-confirmacion" aria-selected="false" style="border: 2px solid">3. Confirmación<img src="https://i.imgur.com/6jbwgwQ.png" style="width: 1.2vw; margin-left: 8px"></a>
+                                            </nav>
+                                        </div>
+
+                                        <div class="tab-content" id="nav-tabContent" style="">
+                                            <div class="tab-pane fade show active" id="nav-datos" role="tabpanel" aria-labelledby="nav-datos-tab">
+                                                <div class="card_datos">
+                                                    <div class="card">
+                                                        <div class="row">
+                                                            <div class="form-group col-sm-6">
+                                                                <label>Tipo de documento</label>
+                                                                <select class="form-control" data-val="true" data-val-required="Seleccione el Tipo de Documento" id="cboTipoDocumento2" name="cboTipoDocumento" disabled></select>
+                                                            </div>
+                                                            <div class="form-group col-sm-6">
+                                                                <label>Número de documento</label>
+                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Número de documento inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de documento" id="txtNroDocumento2" name="txtNroDocumento" placeholder="" type="text" value="" disabled>
+                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNroDocumento" data-valmsg-replace="true" id="vldNroDocumento2"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group col-md-12" style="">
+                                                                <label>Nombres</label>
+                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-required="Ingrese su nombre o razón social" id="txtNombres" name="txtNombres" placeholder="" type="text" value="" disabled>
+                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNombres" data-valmsg-replace="true" id="vldNombres"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group col-md-6" style="">
+                                                                <label>Apellido Paterno</label>
+                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido paterno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido parterno o &#39;-&#39; si tiene razón social" id="txtApPaterno" name="txtApPaterno" placeholder="" type="text" value="" disabled>
+                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApPaterno" data-valmsg-replace="true" id="vldApPaterno"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6" style="">
+                                                                <label>Apellido Materno</label>
+                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido materno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido marterno o &#39;-&#39; si tiene razón social" id="txtApMaterno" name="txtApMaterno" placeholder="" type="text" value="" disabled>
+                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApMaterno" data-valmsg-replace="true" id="vldApMaterno"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+
+                                                            <div class="form-group col-md-6">
+                                                                <label>Correo electrónico</label>
+                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Correo inválido" data-val-regex-pattern="^([a-zA-Z0-9._+-]+)(@[a-zA-Z0-9-]+)(.[a-zA-Z]{2,4}){2,}$" data-val-required="Ingrese su e-mail" id="txtCorreo" name="txtCorreo" placeholder="" type="text" value="">
+                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtCorreo" data-valmsg-replace="true" id="vldCorreo"></span>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label>Celular</label>
+                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Teléfono inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de teléfono" id="txtTelefono" name="txtTelefono" placeholder="" type="text" value="">
+                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtTelefono" data-valmsg-replace="true" id="vldTelefono"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" >
+                                                            <div class="form-group col-md-6">
+                                                                <button type="button" class="btn_atras" onclick="showStep(1)" style="justify-content: flex-end"><img class="img_paginador_atras" src="https://i.imgur.com/u9fPLN4.png">Atrás</button>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <button type="button" class="btn_continuar" id="btnContinuar2" onclick="nextTab()" style="float:right">Siguiente<img class="img_paginador_siguiente" src="https://i.imgur.com/NfgeFxw.png"></button>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="card" style="width: 30%; background-color: red; color: white; padding: 20px; border-radius: 0; border: none">
+                                                        <h2 style="text-align: center;">¿Eres cliente MAF?</h2>
+                                                        <h5 style="text-align: center">¡Ingresa a Mi Portal Web MAF donde encontrarás toda la información que necesitas!</h5>
+                                                        <div style="display: flex">
+                                                            <img src="https://i.imgur.com/JVs2YBI.png" width="50%" style=" margin-top: 20px">
+                                                            <list style="font-size: 10px; margin-top: 20px">
+                                                                <li style="font-size: 10px">Consulta tus saldos</li>
+                                                                <li>Descarga tus estados de cuenta</li>
+                                                                <li>Realiza tus pagos</li>
+
+                                                                <img src="https://i.imgur.com/hIHxsQV.png" style="margin-top: 100px; margin-left: 30px ;width: 70%">
+                                                            </list>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+<!--                                            //Detallanos-->
+                                            <div class="tab-pane fade" id="nav-caso" role="tabpanel" aria-labelledby="nav-caso-tab">
+                                                <div class="container mt-5">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <!-- Columna más ancha para el formulario -->
+                                                                <div class="col-md-9">
+                                                                    <div class="mb-2">
+                                                                        <label for="tipoProducto" class="form-label">Tipo de producto *</label>
+                                                                        <select class="form-select" id="tipoProducto" required>
+                                                                            <option selected>Crédito vehicular</option>
+                                                                            <!-- Otras opciones -->
+                                                                        </select>
+                                                                        <label for="tipoProducto" class="form-label">Tipo de producto *</label>
+                                                                        <select class="form-select" id="tipoProducto" required>
+                                                                            <option selected>Crédito vehicular</option>
+                                                                            <!-- Otras opciones -->
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="consultaSolicitud" class="form-label">Consulta o Solicitud *</label>
+                                                                        <select class="form-select" id="consultaSolicitud" required>
+                                                                            <option selected>Seleccione</option>
+                                                                            <!-- Otras opciones -->
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="submotivo" class="form-label">Submotivo *</label>
+                                                                        <select class="form-select" id="submotivo" required>
+                                                                            <option selected>Seleccione</option>
+                                                                            <!-- Otras opciones -->
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <textarea class="form-control" placeholder="Deje un comentario aquí" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Columna más estrecha para la imagen -->
+                                                                <div class="col-md-3 d-flex flex-column justify-content-center">
+                                                                    <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="Descripción de la imagen">
+                                                                    <!-- Asegúrate de reemplazar 'path-to-your-image.jpg' con la ruta real a tu imagen -->
+                                                                    <p style="font-size: 1vw">¡Soy Chat Mafito! Y estoy aquí para resolver tus consultas. Me encuentras en el Portal Web.</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    <br>
+
+                                                    <button type="button" class="btn_atras" onclick="showStep(1)">Atrás</button>
+                                                </div>
+                                            </div>
+<!--                                            //Confirmacion-->
+                                            <div class="tab-pane fade" id="nav-confirmacion" role="tabpanel" aria-labelledby="nav-confirmacion-tab">
+                                                <img src="https://i.imgur.com/6jbwgwQ.png" style="width: 1.2vw; margin-left: 8px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="step3" style="display: none;">
+                            <button type="button" onclick="showStep(2)">Atrás</button>
+                            <button type="button" class="btn_continuar" onclick="showStep(2)">Siguiente</button>
+                            <button type="submit">Enviar</button>
+                        </div>
+
+
+<!--                        <div class="form-group col-md-6">-->
+<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-required="Ingrese su nombre o razón social" id="txtNombres" name="txtNombres" placeholder="Tus nombres o razón social" type="text" value="">-->
+<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNombres" data-valmsg-replace="true" id="vldNombres"></span>-->
+<!--                        </div>-->
+<!--                        <div class="form-group col-md-6">-->
+<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido paterno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido parterno o &#39;-&#39; si tiene razón social" id="txtApPaterno" name="txtApPaterno" placeholder="Apellido Paterno" type="text" value="">-->
+<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApPaterno" data-valmsg-replace="true" id="vldApPaterno"></span>-->
+<!--                        </div>-->
+<!--                        <div class="form-group col-md-6">-->
+<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido materno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido marterno o &#39;-&#39; si tiene razón social" id="txtApMaterno" name="txtApMaterno" placeholder="Apellido Materno" type="text" value="">-->
+<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApMaterno" data-valmsg-replace="true" id="vldApMaterno"></span>-->
+<!--                        </div>-->
+<!--                        <div class="form-group col-md-6">-->
+<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Teléfono inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de teléfono" id="txtTelefono" name="txtTelefono" placeholder="Teléfono" type="text" value="">-->
+<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtTelefono" data-valmsg-replace="true" id="vldTelefono"></span>-->
+<!--                        </div>-->
+<!--                        <div class="form-group col-md-6">-->
+<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Correo inválido" data-val-regex-pattern="^([a-zA-Z0-9._+-]+)(@[a-zA-Z0-9-]+)(.[a-zA-Z]{2,4}){2,}$" data-val-required="Ingrese su e-mail" id="txtCorreo" name="txtCorreo" placeholder="Email" type="text" value="">-->
+<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtCorreo" data-valmsg-replace="true" id="vldCorreo"></span>-->
+<!--                        </div>-->
+<!--                        <div class="form-group col-md-6">-->
+<!--                            <select class="form-control" data-val="true" data-val-required="Seleccione el Tipo de Producto" id="cboTipoProducto" name="cboTipoProducto" placeholder="Tipo de producto">-->
+<!--                                <option value="" selected="selected">Tipo de producto</option>-->
+<!--                                <option value="460710000">Crédito vehicular</option>-->
+<!--                                <option value="460710001">Leasing</option>-->
+<!--                                <option value="460710002">Crédito de consumo</option>-->
+<!--                                <option value="460710003">Otros</option>-->
+<!--                            </select>-->
+<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="cboTipoProducto" data-valmsg-replace="true" id="vldTipoProducto"></span>-->
+<!--                        </div>-->
+<!--                        <div class="form-group col-md-6">-->
+<!--                            <select class="form-control" data-val="true" data-val-required="Seleccione el Motivo" id="cboMotivo" name="cboMotivo"></select>-->
+<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="cboMotivo" data-valmsg-replace="true" id="vldMotivo"></span>-->
+<!--                        </div>-->
+<!--                        <div class="form-group col-md-6">-->
+<!--                            <select class="form-control" id="cboSubMotivo" name="cboSubMotivo"></select>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash;FIN-RC3244&ndash;&gt;-->
+<!--                        <div class="form-group col-md-12">-->
+<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 4000 caracteres" data-val-length-max="4000" data-val-required="Es necesario detallar la consulta o solicitud" id="txtDescripcion" name="txtDescripcion" placeholder="Bríndanos el detalle de tu consulta o solicitud para poder ayudarte lo más pronto posible." type="text" value="">-->
+<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtDescripcion" data-valmsg-replace="true" id="vldDescripcion"></span>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; INI EXP(CMZ) 18052021 - REQ19125 &ndash;&gt;-->
+<!--                        <div class="col-md-12">-->
+<!--                            <input type="file" id="DocumentFiles" name="DocumentFiles" multiple="">-->
+<!--                        </div>-->
+<!--                        <div class="producto-foto" hidden="">-->
+<!--                            <input type="text" name="NumDoc" id="NumDoc" value="">-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash;  FIN EXP(CMZ) 18052021 - REQ19125&ndash;&gt;-->
+<!--                        <div class="form-group col-md-12">-->
+<!--                            <tr>-->
+<!--                                <td colspan="3" class="mensaje">-->
+<!--                                    <table>-->
+<!--                                        <tr>-->
+<!--                                            <td><p><input id="chkTerminosCondiciones" name="chkTerminos" type="checkbox" /></p></td>-->
+<!--                                            <td style="width:auto;"><p>He leído y acepto las-->
+
+<!--                                                <a  href="#" class="" data-bs-toggle="modal" data-bs-target="#modalTerminos">-->
+<!--                                                    condiciones de políticas de seguridad-->
+<!--                                                </a>-->
+<!--                                            </p>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                    </table>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                        </div>-->
+                        <!--</div>-->
+
+<!--                        BOTON ENVIAR -->
+<!--                        <div class="form-group col-md-12 text-center">-->
+<!--                            <button id="btnSubmit" type="submit" class="btn btn-primary" disabled="">ENVIAR</button>-->
+<!--                        </div>-->
+                        <!--</div>-->
+                    </div>
+                    </form>
+
+                    <!--INI-Modal Procesando-->
+                    <div class="modal" id="modalWait">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src='https://mafperu.com/wp-content/themes/mafperu2023/image/loading.gif' width='32px' height='32px'>&nbsp;&nbsp;Enviando la información, por favor espere.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--FIN-Modal Procesando-->
+
+                    <!--INI-Modal Información registrada-->
+                    <div class="modal fade" id="modalSuccess" tabindex="-1" aria-labelledby="mdlSuccessTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="mdlSuccessTitle">Información registrada</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="close" onclick="$('#modalSuccess').modal('hide')"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Hola <strong id="cliente"></strong>! hemos recibido su caso correctamente, estaremos revisándolo para contactarnos con usted y brindarle una respuesta lo más antes posible. ¡Muchas gracias de parte de la familia de MAF!
+                                </div>
+                                <div class="modal-footer text-center">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="$('#modalSuccess').modal('hide')">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--FIN-Modal Información registrada-->
+                    <!--INI-The Modal 1-->
+                    <div class="modal" id="modalTerminos">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <!--Modal Header 1-->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" onclick="$('#modalTerminos').modal('hide')">&times;</button>
+                                    <br />
+                                </div>
+                                <!--Modal body 1-->
+                                <div class="modal-body">
+                                    <div class="tyc">
+                                        <h2>WEB MAF - TÉRMINOS Y CONDICIONES</h2>
+                                        <div>
+                                            <p>Mitsui Auto Finance S.A, con RUC N° 20375361991, con domicilio en Cal. Las Begonias N° 475, Edificio Plaza del Sol, Piso 10 - San Isidro, Lima – Perú, será responsable del uso y el tratamiento de sus datos personales.</p>
+                                            <h3>
+                                                <b>Tratamiento Necesario</b>
+                                            </h3>
+                                            <p>
+                                                MAF Perú tratará sus datos personales de carácter identificativos registrados en el formulario previo, con la finalidad de enviarle – a través de cualquier medio de comunicación (teléfono, correo electrónico o SMS o medios similares) información sobre productos y/o servicios que ha solicitado.
+                                            </p>
+                                            <h3>
+                                                <b>Destinatarios Necesarios</b>
+                                            </h3>
+                                            <p>
+                                                Asimismo, sus datos podrán ser tratados por terceros – a nivel nacional o internacional – por encargo de MAF para cumplir con la finalidad necesaria previamente descrita, tales como Autoridades Nacionales, Centrales de Riesgos, proveedores de: hosting, contact center, y otros que sean necesarios para dicho fin.
+                                            </p>
+                                            <h3>
+                                                <b>Ejercicio de los derechos ARCO</b>
+                                            </h3>
+                                            <p>
+                                                Puede ejercer los derechos de acceso, rectificación, cancelación y oposición de sus datos personales; así como revocar su consentimiento presentando sus solicitudes en nuestras oficinas o solicitar la rectificación y/o modificación de sus datos personales a través de nuestra oficina de atención Cal. Las Begonias N° 475, Edificio Plaza del Sol, Piso 10 - San Isidro, Lima – Perú.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--FIN-The Modal 1-->
+                    <div class="conteTerminos" style="display: none;">
+                        <div class="terminnos">
+                            <div class="tyc">
+                                <h2>WEB MAF - TÉRMINOS Y CONDICIONES</h2>
+                                <div class="conteTYC">
+                                    <p>Mitsui Auto Finance S.A, con RUC N° 20375361991, con domicilio en Av. Juan de Arona 151, San Isidro, Lima, Perú, será responsable del uso y el tratamiento de sus datos personales.</p>
+                                    <h3>
+                                        <b>Tratamiento Necesario</b>
+                                    </h3>
+                                    <p>MAF Perú tratará sus datos personales de carácter identificativos registrados en el formulario previo, con la finalidad de enviarle – a través de cualquier medio de comunicación (teléfono, correo electrónico o SMS o medios similares) información sobre productos y/o servicios que ha solicitado.</p>
+                                    <h3>
+                                        <b>Destinatarios Necesarios</b>
+                                    </h3>
+                                    <p>Asimismo, sus datos podrán ser tratados por terceros – a nivel nacional o internacional – por encargo de MAF para cumplir con la finalidad necesaria previamente descrita, tales como Autoridades Nacionales, Centrales de Riesgos, proveedores de: hosting, contact center, y otros que sean necesarios para dicho fin.</p>
+                                    <h3>
+                                        <b>Ejercicio de los derechos ARCO</b>
+                                    </h3>
+                                    <p>Puede ejercer los derechos de acceso, rectificación, cancelación y oposición de sus datos personales; así como revocar su consentimiento presentando sus solicitudes en nuestras oficinas o solicitar la rectificación y/o modificación de sus datos personales a través de nuestra oficina de atención Juan de Arona 151 – Piso 2 San Isidro.</p>
+                                </div>
+                            </div>
+                            <a href="https://portal.mafperu.com/WebMAF#" id="btnCloseTYC" class="btnClose">X</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- block maf end -->
+            </div>
+        </section>
+        <section class="section-4 row m-0">
+            <div class="col-md-5 conteTypesAttention">
+                <div class="conteTypesAttention-inner">
+                    <h3 class="text-start">Atención Presencial: </h3>
+                    <p class="text-start">A través de los Ejecutivos Comerciales en nuestras oficinas especiales ubicadas en los concesionarios de Toyota.</p>
+                    <h3 class="text-start">Atención Virtual: </h3>
+                    <p class="text-start">Complete el formulario que se encuentra en la sección contáctanos y a la brevedad posible nos pondremos en contacto con usted.</p>
+                    <h3 class="text-start">Atención Telefónica:</h3>
+                    <p class="text-start">Central  telefónica (01) 630 - 8500, de lunes a viernes de 9:00 a 18:00 hrs.</p>
+                </div>
+            </div>
+            <div class="col-md-7 px-0">
+                <script>
+                    const image = "https://mafperu.com/wp-content/uploads/2023/05/new_pointer_map.png";
+                </script>
+                <div class="acf-map" style="height:700px;width:100%">
+                    <div class="marker" data-location="Av. Javier Prado Este 6042, La Molina, Perú" data-lat="-12.0711107" data-lng="-76.9542847">
+                        <h4>Mitsui - La Molina</h4><p>Av. Javier Prado Este 6042, La Molina, Perú</p>                        </div>
+
+                    <div class="marker" data-location="Av. Mártires del 4 de noviembre Mz.A Lt.4-6 Urb. Municipal Taparachi - Juliaca" data-lat="-15.5243512" data-lng="-70.1306961">
+                        <h4>Conauto - Juliaca</h4><p>Lote A 4-6 Zona Industrial Urb. Municipal Taparachi</p>                        </div>
+
+                    <div class="marker" data-location="Avenida Alfonso Ugarte 205, Arequipa, Perú" data-lat="-16.4210512" data-lng="-71.5533317">
+                        <h4>Conauto - Arequipa</h4><p>Av. Alfonso Ugarte N° 205</p>                        </div>
+
+                    <div class="marker" data-location="Av. Sanchez Cerro Mz.240 Zona Industrial - Piura" data-lat="-5.1819222" data-lng="-80.6570599">
+                        <h4>Nor Autos Piura</h4><p>Prolong. Av. Sánchez Cerro Mz. 240, Zona Industrial, Carretera a Sullana</p>                        </div>
+
+                    <div class="marker" data-location="Av. Jorge Basadre Grohmann Oeste 240, Tacna, Tacna, Perú" data-lat="-18.0150952" data-lng="-70.260853">
+                        <h4>Matsuri - Tacna</h4><p>Av. Jorge Basadre Grohmann No. 240</p>                        </div>
+
+                    <div class="marker" data-location="Av. Panamericana Sur Km 300.5, Ica 01406, Perú" data-lat="-14.0810846" data-lng="-75.736034">
+                        <h4>Autoespar - Ica</h4><p>Carretera Panamericana Km. 300.50 Urb. La Angostura</p>                        </div>
+
+                    <div class="marker" data-location="Av. Javier Prado Este 6038, La Molina, Perú" data-lat="-12.0713685" data-lng="-76.954539">
+                        <h4>Mitsui - Lexus</h4><p>Av. Javier Prado Este Nº 6038</p>                        </div>
+
+                    <div class="marker" data-location="Av. Canadá 120, La Victoria 15034, Perú" data-lat="-12.0825672" data-lng="-77.0259193">
+                        <h4>Mitsui - Canadá</h4><p>Av. Canadá Nº 120, Urb. Sta. Catalina</p>                        </div>
+
+                    <div class="marker" data-location="Avenida Comandante Espinar 428, Miraflores 15074, Perú" data-lat="-12.1154729" data-lng="-77.0366115">
+                        <h4>Mitsui - Miraflores</h4><p>Av. Comandante Espinar No. 428</p>                        </div>
+
+                    <div class="marker" data-location="Carr. Central 1283, Santa Anita 15011, Perú" data-lat="-12.0482284" data-lng="-76.9503529">
+                        <h4>Mitsui - Santa Anita</h4><p>Carretera Central 1283, Zona Industrial</p>                        </div>
+
+                    <div class="marker" data-location="Av. Defensores del Morro 1470, Distrito de Chorrillos, Perú" data-lat="-12.1763414" data-lng="-77.0173897">
+                        <h4>Gaman Autos - Chorrillos</h4><p>Av. Defensores del Morro N° 1470</p>                        </div>
+
+                    <div class="marker" data-location="Av. Aviación 4928, Santiago de Surco, Perú" data-lat="-12.125385" data-lng="-76.999968">
+                        <h4>Grupo Pana - Surco</h4><p>Av. Aviacion 4928, Higuereta</p>                        </div>
+
+                    <div class="marker" data-location="Av. la Marina 3240, San Miguel 15088, Perú" data-lat="-12.0746903" data-lng="-77.0980429">
+                        <h4>Grupo Pana - San Miguel</h4><p>Av. La Marina Nº 3240</p>                        </div>
+
+                    <div class="marker" data-location="Av. República de Panamá 4546, Surquillo 15047, Perú" data-lat="-12.1105635" data-lng="-77.018828">
+                        <h4>Grupo Pana - Surquillo</h4><p>Av. República de Panamá N° 4546</p>                        </div>
+
+                    <div class="marker" data-location="Av. Alfredo Mendiola 1635, Distrito de Lima, Perú" data-lat="-12.0112722" data-lng="-77.0610785">
+                        <h4>Autoespar - Fiori</h4><p>Av. Alfredo Mendiola Nº 1635</p>                        </div>
+
+                    <div class="marker" data-location="Galería Norte, Independencia 15311, Perú" data-lat="-12.0061246" data-lng="-77.0589526">
+                        <h4>Autoespar - Plaza Norte</h4><p>Av. Tomás Valle cruce con Av. Alfredo Mendiola</p>                        </div>
+
+                    <div class="marker" data-location="Av. Tupac Amaru 1495, Comas, Lima, Perú" data-lat="-11.950049" data-lng="-77.0497261">
+                        <h4>Autoespar - Comas</h4><p>Av. Tupac Amaru N° 1495</p>                        </div>
+
+                    <div class="marker" data-location="Avenida de las Torres 120, San Luis, Perú" data-lat="-12.0644965" data-lng="-76.9878089">
+                        <h4>Autoespar - San Luis</h4><p>Av.  Las Torres N° 120</p>                        </div>
+
+                    <div class="marker" data-location="Avenida Nicolás de Piérola 684, Trujillo, Perú" data-lat="-8.1039247" data-lng="-79.034665">
+                        <h4>Autonort - Trujillo</h4><p>Av. Nicolás de Piérola Nº 684, Urb. Primavera</p>                        </div>
+
+                    <div class="marker" data-location="Mall Plaza, Avenida América Oeste, Trujillo, Perú" data-lat="-8.1021123" data-lng="-79.0482856">
+                        <h4>Autonort - Mall Trujillo</h4><p>Av. America Oeste No. 750,Urb. El Ingenio</p>                        </div>
+
+                    <div class="marker" data-location="Av. Enrique Meiggs 621, Chimbote, Perú" data-lat="-9.079713" data-lng="-78.5818824">
+                        <h4>Autonort - Chimbote</h4><p>Av. Meiggs 621 Mz. W Lote 61 P. J. Miramar Bajo</p>                        </div>
+
+                    <div class="marker" data-location="Gral. Miñano 23, Cachicadan 13156, Perú" data-lat="-8.0944898704528" data-lng="-78.14917647424">
+                        <h4>Autonort - Huaraz</h4><p>Av. Prolongación Raymondi n° 1059</p>                        </div>
+
+                    <div class="marker" data-location="Av. Hoyos Rubio 1272, Cajamarca 06001, Perú" data-lat="-7.1492422" data-lng="-78.5025856">
+                        <h4>Autonort - Cajamarca</h4><p>Av. Hoyos Rubio N°1380 - 1382</p>                        </div>
+
+                    <div class="marker" data-location="Ignacio Merino, Talara, Perú" data-lat="-4.5943652" data-lng="-81.2583353">
+                        <h4>Autonort - Talara</h4><p>Av. Ignacio Merino (antes Av.  F ) Mz. R Lt. 5, Zona Industrial</p>                        </div>
+
+                    <div class="marker" data-location="Juan Tomis Stack 3033, Chiclayo, Perú" data-lat="-6.7723385" data-lng="-79.8633272">
+                        <h4>Nor autos - Lambayeque</h4><p>Av. Juan Tomis Stack 199 Km. 1.5, Carretera a Pimentel</p>                        </div>
+
+                    <div class="marker" data-location="Avenida Villa Hermosa 1151, Arequipa, Perú" data-lat="-16.3635957" data-lng="-71.5618958">
+                        <h4>Mitsui - Arequipa</h4><p>Calle Villa Hermosa 1151</p>                        </div>
+
+                    <div class="marker" data-location="A.h Tahuantinsuyo, Cerro De Pasco 19001, Perú" data-lat="-10.6843606" data-lng="-76.2424806">
+                        <h4>Mopal - Pasco</h4><p>Jr. Moquegua mz Y lt 1 A.H. Tahuantinsuyo, Chaupimarca, Pasco, Pasco</p>                        </div>
+
+                    <div class="marker" data-location="Toyota Automoviles Huancayo, Miguel Grau, Huancayo, Junín, Perú" data-lat="-12.023734" data-lng="-75.2383363">
+                        <h4>Automoviles SA - Huancayo</h4><p>Av. Mariscal Castilla N° 4800</p>                        </div>
+
+                    <div class="marker" data-location="TOYOTA CORASUR, Avenida de La Cultura, Cusco, Cuzco, Perú" data-lat="-13.524035" data-lng="-71.9581093">
+                        <h4>Corasur - Cusco</h4><p>Av. La Cultura N° 1142-1146-1150, Wanchaq</p>                        </div>
+
+                    <div class="marker" data-location="4W7J+5R9, Puente Piedra 15121, Perú" data-lat="-11.886979559758" data-lng="-77.0680126">
+                        <h4>Autoespar - Puente Piedra</h4><p>Av. Carretera Panamericana Norte Km. N° 27.5, Parcela 10271, Predio Rústico Tambo Inga</p>                        </div>
+
+                    <div class="marker" data-location="3QP9+JRX, Huánuco 10002, Perú" data-lat="-9.9135942078465" data-lng="-76.231497615344">
+                        <h4>Automotores Mopal - Huanuco</h4><p>Km 2.5 Vía Inter Regional Huánuco – Tingo María</p>                        </div>
+
+                    <div class="marker" data-location="MFH2+GQ Distrito de Caserío San Pablo De Juantia, Perú" data-lat="-8.3211458575756" data-lng="-74.548022868773">
+                        <h4>Automotores - Ucayali</h4><p>Jr. Grau No. 135</p>                        </div>
+
+                    <div class="marker" data-location="Calle los Lirios 301, San Juan de Miraflores, Perú" data-lat="-12.1762564" data-lng="-76.9791304">
+                        <h4>Gaman Autos - San Juan de Miraflores</h4><p>Av Los Lirios No. 301 nivel 1 autos</p>                        </div>
+
+                    <div class="marker" data-location="Av. César Vallejo 1345, Trujillo, Perú" data-lat="-8.1008699" data-lng="-79.0098386">
+                        <h4>Mannucci Motors - Trujillo</h4><p>Av. Cesar Vallejo Oeste No.1345 Local B-07</p>                        </div>
+
+                    <div class="marker" data-location="VX6C+QMW, Víctor Larco Herrera 13009, Perú" data-lat="-8.1380125" data-lng="-79.0282969">
+                        <h4>Mannucci Motors - Larco Herrera</h4><p>Carretera Industrial, Lote A, Z.I. La Encalada</p>                        </div>
+
+                    <div class="marker" data-location="Edificio Plaza del Sol, Calle Las Begonias 475" data-lat="-12.0927187" data-lng="-77.0242044">
+                        <h4>Oficina Central</h4><p>Edificio Plaza del Sol, Calle Las Begonias 475, oficinas 1001 y 1101</p>                        </div>
+
+                    <div class="marker" data-location="Av el Ejército 750, Huanta, Ayacucho, Perú" data-lat="-12.9303795" data-lng="-74.250502">
+                        <h4>Automoviles - Ayacucho</h4><p>Av. El Ejército Nro 750</p>                        </div>
+
+                    <div class="marker" data-location="Av. Argentina 3698, Callao 07001, Perú" data-lat="-12.0492944" data-lng="-77.1065459">
+                        <h4>Grupo Pana – Callao</h4><p>Av. Argentina 3698, Callao</p>                        </div>
+                </div>            </div>
+        </section>
+        <section class="section-5 w-100 d-flex flex-column flex-md-row justify-content-center align-items-center">
+            <div class="conteText">
+                <h3 class="fw-bold">Preguntas Frecuentes</h3>
+                <p>Explora las preguntas más realizadas por nuestros usuarios.</p>
+            </div>
+            <a class="button d-flex justify-content-center align-items-center" href="https://mafperu.com/preguntas-frecuentes/" target="_self">Visitar Preguntas Frecuentes</a>
+
+        </section>
+
+    </main><!-- #main -->
+
+
+    <footer id="colophon" class="site-footer row m-0 py-5">
+        <div class="footerTop row m-0">
+            <div class="col-12 col-md-6 offset-md-1 col-xl-3 offset-xl-1 contelinks">
+
+
+                <p class="text-center text-md-start titleSites">SITIOS DE INTERÉS</p>
+                <div class="conteBrand d-flex flex-row justify-content-between align-items-center flex-wrap my-4">
+                    <a href="https://www.toyotaperu.com.pe/?gclid=CjwKCAjwpayjBhAnEiwA-7ena8eHwLnh4A4tQr3c8jFwWLtWuIMyiCNkV1YrkUw2M6GFJ7DUkQXEUBoC25kQAvD_BwE" target="_blank" rel=”noreferrer noopener”>
+                        <img src="https://mafperu.com/wp-content/uploads/2023/05/logo-toyota.webp" width="60" height="44" class="w-100 h-auto" alt="logo-toyota">
+                    </a>
+                    <a href="https://www.lexusperu.com.pe/es.html" target="_blank" rel=”noreferrer noopener”>
+                        <img src="https://mafperu.com/wp-content/uploads/2023/05/logo-lexus.webp" width="69" height="44" class="w-100 h-auto" alt="logo-lexus">
+                    </a>
+                    <a href="https://www.hinoperu.com.pe/" target="_blank" rel=”noreferrer noopener”>
+                        <img src="https://mafperu.com/wp-content/uploads/2023/05/logo-hino.webp" width="47" height="44" class="w-100 h-auto" alt="logo-hino">
+                    </a>
+
+                </div>
+
+            </div>
+            <div class="col-12 col-md-10 offset-md-1 offset-xl-0  col-xl-7 row">
+                <div class="col-6 offset-md-1 col-md-3 contelinks">
+                    <a class="btnfooter linktitle" href="https://mafperu.com/nosotros/" target=""    >NOSOTROS</a>
+                    <a class="btnfooter linktitle" href="https://zonasegura.mafperu.com/portalclientes/" target="_blank"  rel=”noreferrer noopener”  >MI PORTAL WEB MAF</a>
+                    <a class="btnfooter linktitle" href="/promociones" target=""    >PROMOCIONES</a>
+                    <a class="btnfooter linktitle" href="#" target=""    >MAPA DE SITIO</a>
+                    <a class="btnfooter linktitle" href="http://ecomprobantes.net.pe/maf/Formularios/frmInicio.aspx" target="_blank"  rel=”noreferrer noopener”  >FACTURACIÓN ELECTRÓNICA</a>
+                    <a class="btnfooter linktitle" href="https://mafperu.com/wp-content/uploads/2024/03/Politica-de-Privacidad-8.11.23.pdf" target="_blank"  rel=”noreferrer noopener”  >POLÍTICA DE PRIVACIDAD</a>
+                </div>
+                <div class="col-6 col-md-3  contelinks">
+                    <p class="btnfooter linktitle">NUESTROS PRODUCTOS</p>
+                    <a class="btnfooter linkChild" href="https://mafperu.com/category/productos/credito-vehicular/" target=""  >Crédito Vehicular</a>
+                    <a class="btnfooter linkChild" href="https://mafperu.com/productos/leasing/" target=""  >Leasing</a>
+                    <a class="btnfooter linkChild" href="https://mafperu.com/category/productos/prestamo-personal/" target=""  >Préstamo Personal</a>
+                    <p class="btnfooter linktitle">ATENCIÓN AL CLIENTE</p>
+                    <a class="btnfooter linkChild" href="https://mafperu.com/informacion-al-usuario/" target=""  >Información al Usuario</a>
+                    <a class="btnfooter linkChild" href="https://mafperu.com/preguntas-frecuentes/" target=""  >Preguntas Frecuentes</a>
+                </div>
+                <div class="col-12 col-md-5  contelinks">
+                    <a class="btnfooter linktitle" href="https://mafperu.com/contactanos/" target=""     >CONTACTO </a>
+
+                    <p class="msgContact">Llámanos a nuestra central telefónica, atendemos de lunes a viernes de 9:00 a 18:00 hrs.<br />
+                        <span>(01) 630 - 8500</span><br />
+                        Contacte a nuestros ejecutivos comerciales ubicados en las oficinas especiales de los concesionarios Toyota.<br />
+                        <br />
+                    </p>
+
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="footerBottom row mx-0">
+
+            <div class="order-3 order-md-1 conteallRightsReserved col-12 col-md-5 offset-md-1 d-flex flex-row justify-content-center justify-content-md-start align-items-center">
+                <p class="allRightsReserved">2023 MAF Perú. Todos los derechos reservados. <br>MITSUI AUTO FINANCE PERU S.A.<br>RUC: 20375361991</p>
+            </div>
+            <div class="order-1 order-md-2 conteAllSm contelinks  col-12  col-md-3  d-flex flex-row flex-md-column  justify-content-center align-items-center">
+
+                <div class="conteSN d-flex flex-row justify-content-start align-items-center flex-wrap my-4">
+                    <a class="button" href="https://www.facebook.com/mafperu.financiera" target="_blank">
+                        <img src="https://mafperu.com/wp-content/uploads/2023/05/icon-facebook.webp" width="32" alt="icon-facebook" />
+                    </a>
+                    <a class="button" href="https://www.instagram.com/mafperuoficial/" target="_blank">
+                        <img src="https://mafperu.com/wp-content/uploads/2023/05/icon-instagram.webp" width="32" alt="icon-instagram" />
+                    </a>
+                    <a class="button" href="https://www.linkedin.com/company/mafperu/" target="_blank">
+                        <img src="https://mafperu.com/wp-content/uploads/2023/05/icon-linkeding.webp" width="32" alt="icon-linkeding" />
+                    </a>
+                    <a class="button" href="https://www.youtube.com/@mafperu3731" target="_blank">
+                        <img src="https://mafperu.com/wp-content/uploads/2023/05/icon-youtube.webp" width="32" alt="icon-youtube" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="order-2 order-md-3 conteClaimBook col-12  col-md-2  d-flex flex-row flex-md-column  justify-content-center align-items-center">
+                <a href="https://mafperu.com/libro-de-reclamacion/" target=""   class="btn-claimBook d-flex flex-column  justify-content-center align-items-center">
+                    <img src="https://mafperu.com/wp-content/uploads/2023/09/libro-reclamaciones.png" class="img-fluid" alt="">
+                </a>
+            </div>
+        </div>
+    </footer><!-- #colophon -->
+</div><!-- #page -->
+
+<style id='core-block-supports-inline-css'>
+    /**
+     * Core styles: block-supports
+     */
+
+</style>
+<script src="https://mafperu.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.9.3" id="swv-js"></script>
+<script id="contact-form-7-js-extra">
+    var wpcf7 = {"api":{"root":"https:\/\/mafperu.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+</script>
+<script src="https://mafperu.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.9.3" id="contact-form-7-js"></script>
+<script src="https://mafperu.com/wp-content/themes/mafperu2023/js/bootstrap-5.2.3/bootstrap.bundle.min.js?ver=1.0.1" id="mafperu2023-boostrap-js"></script>
+<script src="https://mafperu.com/wp-content/themes/mafperu2023/js/glide.min.js?ver=1.0.1" id="mafperu2023-glide-js-js"></script>
+<script src="https://mafperu.com/wp-content/themes/mafperu2023/js/jquery-3.5.1.min.js?ver=1.0.1" id="jquery-js"></script>
+<script src="https://mafperu.com/wp-content/themes/mafperu2023/js/maps.js" id="js-maps-defer-js"></script>
+<script src="https://mafperu.com/wp-content/themes/mafperu2023/js/jquery.alphanumeric.js?ver=1.5.0" id="newmafperu2023-alphanumeric-defer-js"></script>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.ajax({
+            type: "GET",
+            url: "/WebMaf/Home/Create",
+            async: true,
+            success: function(msg) {
+                var asunto = msg.ASUNTO;
+                var html = msg.HTML;
+                $(".conteTerminos .terminnos .tyc h2").html(asunto);
+                $(".conteTerminos .terminnos .tyc .conteTYC").html(html);
+            }
+        });
+        $("p[id=idparrafo]").click(function() {
+            $('#modalTerminos').modal();
+        });
+        $(".form-control").data("valid", false);
+
+        $("#hdnTipoCaso").data("valid", false);
+
+        $(".form-control, #hdnTipoCaso").on("keyup change", function(e) {
+            validateField(this);
+            $('input[name="errors"]').val(validateForm() > 0);
+        });
+
+        $("#btnCloseTYC").click(function(e) {
+            e.preventDefault();
+            $(".conteTerminos").css("display", "none");
+        });
+
+        $("#chkTerminosCondiciones").on("change", function() {
+            if (this.checked) {
+                $("#btnSubmit").prop("disabled", false);
+            } else {
+                $("#btnSubmit").prop("disabled", true);
+            }
+        });
+
+        //INI-RC3244
+        var listaTipoDocumento = [];
+
+        function CargaTipoDocumento(element) {
+            $.ajax({
+                type: "GET",
+                url: 'https://api-col-prod.crossnet.la/WebApiMafperu/api/contacto/listartipodocumento',
+                success: function(data) {
+                    listaTipoDocumento = data;
+                    htmlTipoDocumento(element);
+                }
+            })
+        }
+
+        function htmlTipoDocumento(element) {
+            var $ele = $(element);
+            $ele.empty();
+            $ele.append($('<option/>').val('').text('Tipo de Documento'));
+            $.each(listaTipoDocumento, function(i, val) {
+                var nombre = val.Nombre;
+                if (nombre == "RUC") {
+                    $ele.append($('<option/>').val("9").text(val.Nombre));
+                }
+                if (nombre == "DNI") {
+                    $ele.append($('<option/>').val("2").text(val.Nombre));
+                }
+                if (nombre == "Pasaporte") {
+                    $ele.append($('<option/>').val("3").text(val.Nombre));
+                }
+                if (nombre == "Carné de extranjería") {
+                    $ele.append($('<option/>').val("1").text(val.Nombre));
+                }
+            })
+        }
+
+        CargaTipoDocumento($('#cboTipoDocumento'));
+        CargaTipoDocumento($('#cboTipoDocumento2'));
+
+        var listaMotivo = [];
+
+        function CargaMotivo(element) {
+            var _consulta = $('input:radio[id=chkConsulta]:checked').val();
+            var _solicitud = $('input:radio[id=chkSolicitud]:checked').val();
+            var _tipo = "";
+
+            if (_consulta != undefined) {
+                _tipo = "C";
+            }
+
+            if (_solicitud != undefined) {
+                _tipo = "S";
+            }
+
+            if (_tipo != "") {
+                $.ajax({
+                    type: "GET",
+                    url: 'https://api-col-prod.crossnet.la/WebApiMafperu/api/contacto/listarmotivo?tipo=' + _tipo,
+                    success: function(data) {
+                        listaMotivo = data;
+                        htmlMotivo(element);
+                    }
+                })
+            } else {
+                htmlMotivo(element);
+            }
+        }
+
+        function htmlMotivo(element) {
+            var $ele = $(element);
+            $ele.empty();
+            $ele.append($('<option/>').val('').text('Seleccionar'));
+            $.each(listaMotivo, function(i, val) {
+                $ele.append($('<option/>').val(val.Codigo).text(val.Nombre));
+            })
+        }
+
+        CargaMotivo($('#cboMotivo'));
+
+        var listaSubMotivo = [];
+
+        function CargaSubMotivo(element) {
+            var _id = $('#cboMotivo').val();
+            var _consulta = $('input:radio[id=chkConsulta]:checked').val();
+            var _solicitud = $('input:radio[id=chkSolicitud]:checked').val();
+            var _tipo = "";
+
+            if (_consulta != undefined) {
+                _tipo = "C";
+            }
+
+            if (_solicitud != undefined) {
+                _tipo = "S";
+            }
+
+            if (_tipo != "" && _id != "") {
+                $.ajax({
+                    type: "GET",
+                    url: 'https://api-col-prod.crossnet.la/WebApiMafperu/api/contacto/listarsubmotivo?tipo=' + _tipo + '&id=' + _id,
+                    async: false,
+                    success: function(data) {
+                        listaSubMotivo = data;
+                        htmlSubMotivo(element);
+                    }
+                })
+            } else {
+                htmlSubMotivo(element);
+            }
+        }
+
+        function htmlSubMotivo(element) {
+            var $ele = $(element);
+            $ele.empty();
+            $ele.append($('<option/>').val('').text('Seleccionar'));
+            $.each(listaSubMotivo, function(i, val) {
+                $ele.append($('<option/>').val(val.Codigo).text(val.Nombre));
+            })
+        }
+
+        CargaSubMotivo("#cboSubMotivo");
+
+        $("#cboMotivo").on("change", function() {
+            CargaSubMotivo("#cboSubMotivo");
+        });
+
+        $("#cboSubMotivo").on("change", function() {
+            var id = $('select[id=cboSubMotivo]').val();
+            $("#hdSubMotivoCod").val(id);
+
+            var des = $('select[name="cboSubMotivo"] option:selected').text();
+            $("#hdSubMotivoDes").val(des);
+        });
+
+        $("#chkConsulta").click(function() {
+            CargaMotivo($('#cboMotivo'));
+            CargaSubMotivo("#cboSubMotivo");
+        });
+
+        $("#chkSolicitud").click(function() {
+            CargaMotivo($('#cboMotivo'));
+            CargaSubMotivo("#cboSubMotivo");
+        });
+        //FIN-RC3244
+
+        $("#frmRegistro").on("submit", function(e) {
+            e.preventDefault();
+            var data = $(this).serialize();
+            var valid = false;
+            var id = "";
+            var valor = "";
+
+            //INI EXP(CMZ) 18052021 REQ19125
+            var formData = new FormData(this);
+            //FIN EXP(CMZ) 18052021 REQ19125
+
+            id = $("#hdSubMotivoCod").val();
+            valor = $("#hdSubMotivoDes").val();
+
+            $.when($(".form-control, #hdnTipoCaso").change()).done(function() {
+                valid = $('input[name="errors"]').val() === "false";
+            });
+
+            $("#cboSubMotivo option[value='" + id + "']").attr("selected", true);
+
+            if (!valid) {
+                $("#chkTerminosCondiciones").prop("checked", false);
+                return false;
+            }
+
+            //INI EXP(CMZ) 18052021 REQ19125
+            var files = document.getElementById('DocumentFiles').files;
+            var aprobacion = 1;
+
+            for (var i = 0; i < files.length; i++) {
+                var Doc = files[i].name;
+                var extension = Doc.split('.').pop();
+
+                if (extension == 'pdf' || extension == 'doc' || extension == 'docx' || extension == 'xls' || extension == 'xlsx' || extension == 'jpg' || extension == 'png') {
+                    aprobacion = 1;
+                } else {
+                    aprobacion = 0;
+                    break;
+                }
+            }
+
+            function guardarDocumento(formData) {
+                $.ajax({
+                    url: "/WebMaf/Home/CreateDocument",
+                    type: "POST",
+                    async: true,
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(data) {
+                        if (result) {
+
+                        } else {
+                            alert("Ha ocurrido un error, intente de nuevo más tarde.");
+                        }
+                    }
+                });
+
+            }
+
+            function guardarTiposVariante(formData) {
+                return ajaxPost(formData, function(data) {
+                    window.location.reload();
+                }, function(data) {
+                    showMessage(data.Message, null);
+                });
+            }
+
+            //INI-RC3244
+            function enviarContacto() {
+                var _consulta = $('input:radio[id=chkConsulta]:checked').val();
+                var _solicitud = $('input:radio[id=chkSolicitud]:checked').val();
+                var _tipodoc = $('select[name="cboTipoDocumento"] option:selected').text();
+                var _tipodocCod = $('select[id=cboTipoDocumento]').val();
+                var _nrodocumento = $("#txtNroDocumento").val();
+                var _nombres = $("#txtNombres").val();
+                var _apaterno = $("#txtApPaterno").val();
+                var _amaterno = $("#txtApMaterno").val();
+                var _correo = $("#txtCorreo").val();
+                var _telefono = $("#txtTelefono").val();
+                var _motivo = $('select[name="cboMotivo"] option:selected').text();
+                var _motivoCod = $('select[id=cboMotivo]').val();
+                var _submotivo = valor;
+                var _submotivoCod = id;
+                var _descripcion = $("#txtDescripcion").val();
+                var _tipoProducto = $('select[id=cboTipoProducto]').val();
+                var _condiciones = $("#chkTerminosCondiciones").val();
+
+                /*INI-Recuperación de tipo de producto*/
+                var _destipoProducto = $('select[name="cboTipoProducto"] option:selected').text();
+                /*FIN-Recuperación de tipo de producto*/
+
+                var _indConsulta = "";
+                var _indSolicitud = "";
+
+                if (_submotivoCod == 'Id' || _submotivoCod == '') return false;
+
+                if (_condiciones == "on") {
+                    _condiciones = "Si";
+                } else {
+                    _condiciones = "";
+                }
+                if (_consulta === undefined) {
+                    _consulta = "No";
+                    _indConsulta = "No";
+                } else {
+                    _consulta = "Si";
+                    _indConsulta = "Si";
+                }
+                if (_solicitud === undefined) {
+                    _solicitud = "No";
+                    _indSolicitud = "No";
+                } else {
+                    _solicitud = "Si";
+                    _indSolicitud = "Si";
+                }
+
+                var _tipoCaso = "";
+                var _consulta = $('input:radio[id=chkConsulta]:checked').val();
+                var _solicitud = $('input:radio[id=chkSolicitud]:checked').val();
+                if (_consulta != undefined) {
+                    _tipoCaso = "8";
+                }
+                if (_solicitud != undefined) {
+                    _tipoCaso = "10";
+                }
+
+                var files = document.getElementById('DocumentFiles').files;
+                var data = new FormData();
+                for (var i = 0; i < files.length; i++) {
+                    data.append("file" + i, files[i]);
+                }
+                var _tieneAdjunto = "No";
+                if (files.length > 0) {
+                    _tieneAdjunto = "Si";
+                }
+
+                var _mensaje = "<!DOCTYPE html>";
+                _mensaje = _mensaje + "<html>";
+                _mensaje = _mensaje + "<head>";
+                _mensaje = _mensaje + "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>";
+                _mensaje = _mensaje + "<title></title>";
+                _mensaje = _mensaje + "</head>";
+                _mensaje = _mensaje + "<body>";
+                _mensaje = _mensaje + "<p><b>Datos del Formulario</b></p>";
+                _mensaje = _mensaje + "<p>- Tipo de documento:" + " " + _tipodoc + "</p>";
+                _mensaje = _mensaje + "<p>- Número de documento:" + " " + _nrodocumento + "</p>";
+                _mensaje = _mensaje + "<p>- Tus nombres o razón social:" + " " + _nombres + "</p>";
+                _mensaje = _mensaje + "<p>- Apellido Paterno:" + " " + _apaterno + "</p>";
+                _mensaje = _mensaje + "<p>- Apellido Materno:" + " " + _amaterno + "</p>";
+                _mensaje = _mensaje + "<p>- Teléfono:" + " " + _telefono + "</p>";
+                _mensaje = _mensaje + "<p>- Email:" + " " + _correo + "</p>";
+                _mensaje = _mensaje + "<p>- Tipo de Producto:" + " " + _destipoProducto + "</p>";
+                _mensaje = _mensaje + "<p>- Motivo:" + " " + _motivo + "</p>";
+                _mensaje = _mensaje + "<p>- Sub Motivo:" + " " + _submotivo + "</p>";
+                _mensaje = _mensaje + "<p>- Descripción:" + " " + _descripcion + "</p>";
+                _mensaje = _mensaje + "<p>- Indicador de Consulta:" + " " + _consulta + "</p>";
+                _mensaje = _mensaje + "<p>- Indicador de Solicitud:" + " " + _solicitud + "</p>";
+                _mensaje = _mensaje + "<p>- Adjunto documentos:" + " " + _tieneAdjunto + "</p>";
+                _mensaje = _mensaje + "<p>- Acepta condiciones:" + " " + _condiciones + "</p>";
+                _mensaje = _mensaje + "</body>";
+                _mensaje = _mensaje + "</html>";
+
+                var registro = {
+                    'RazonSocial': '',
+                    'TipoDoc': _tipodocCod,
+                    'NroDoc': _nrodocumento,
+                    'Nombres': _nombres,
+                    'ApellidoPaterno': _apaterno,
+                    'ApellidoMaterno': _amaterno,
+                    'Email': _correo,
+                    'Celular': _telefono,
+                    'Motivo': _motivoCod,
+                    'SubMotivo': _submotivoCod,
+                    'DetalleCaso': _descripcion,
+                    'TipoCaso': _tipoCaso,
+                    'TipoProductoLib': _tipoProducto,
+                    'EnvioNotificacion': 'E',
+                    'DesTipoDoc' : _tipodoc,
+                    'DesTipoProducto' : _destipoProducto,
+                    'DesMotivo' : _motivo,
+                    'DesSubMotivo' : _submotivo,
+                    'DesConsulta' : _indConsulta,
+                    'DesSolicitud' : _indSolicitud,
+                    'DesTieneAdjunto' : _tieneAdjunto,
+                    'DesCondiciones' : _condiciones
+                };
+
+                var _url = "https://api-col-prod.crossnet.la/WebApiMafperu/api/contacto/enviarconsulta2";
+
+                $.ajax(_url, {
+                    "type": "POST",
+                    "dataType": "json",
+                    "contentType": "application/json;charset=utf-8",
+                    "data": JSON.stringify(registro),
+                    "timeout": 60000,
+                    "beforeSend" : function() {
+                        setTimeout(function(){
+                            $("#modalWait").show();
+                            $('#btnSubmit').prop('disabled', true);
+                        }, 1000);
+                    }
+                })
+                    .done(function (response, textStatus, jqXHR) {
+                        if (response != null) {
+                            var registro = JSON.parse(JSON.stringify(response));
+                            var indicadorExito = registro.indicadorExito;
+                            var guid = registro.guid;
+                            var asunto = registro.asunto;
+
+                            enviar_archivo(indicadorExito, guid, asunto, data);
+
+                            $("#modalWait").hide();
+                            $("#cliente").html(_nombres);
+                            $("#modalSuccess").modal("show");
+                            $('#btnSubmit').prop('disabled', false);
+                            LimpiarControles();
+                        }
+                    })
+                    .fail(function (jqXHR, textStatus, errorThrown) {
+
+                        var dato = "Tipo de documento: " + _tipodoc + " - Nro de documento: " + _nrodocumento + " - Nombres: " + _nombres + " - A.Paterno: " + _apaterno + " - A.Materno: " + _amaterno + " - Motivo: " + _motivo + " - Submotivo: " + _submotivo + " - Detalle: " + _descripcion;
+                        notificar("CONTACTANOS", errorThrown, dato, 1);
+                        alert("Estimado cliente, hemos recibido su caso correctamente, estaremos revisándolo para contactarnos con usted y brindarle una respuesta lo más antes posible. ¡Muchas gracias de parte de la familia de MAF!");
+
+                        $("#modalWait").hide();
+                        $('#btnSubmit').prop('disabled', false);
+                        LimpiarControles();
+                    });
+            }
+            //FIN-RC3244
+
+            if (aprobacion == 1) {
+                if (files.length == 0 || files.length <= 6) {
+                    //FIN EXP(CMZ) 18052021 REQ19125
+                    $.ajax({
+                        url: "/WebMaf/Home/Create",
+                        //INI EXP(CMZ) 18052021 REQ19125
+                        type: "POST",
+                        async: true,
+                        data: formData,
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        //FIN EXP(CMZ) 18052021 REQ19125
+                        success: function(result) {
+                            if (result) {
+                                if (result.success === false) {
+                                    alert(result.content);
+                                } else {
+                                    //INI EXP(CMZ) 18052021 REQ19125
+                                    $("#NumDoc").val(result.content);
+                                    formData.append('NumDoc', $("#NumDoc").val());
+                                    guardarDocumento(formData);
+                                    $('#frmDocumentos').submit();
+                                    //FIN EXP(CMZ) 18052021 REQ19125
+                                    $("#mdlSuccess").modal("show");
+                                    $("#code").html(result.content);
+                                    $("#frmRegistro").trigger("reset");
+                                    $("#hdnTipoCaso").val("0");
+                                    $('input[name="errors"]').val("true");
+                                    $("#btnSubmit").prop("disabled", true);
+                                }
+                            } else {
+                                alert("Ha ocurrido un error, intente de nuevo más tarde.");
+                            }
+                        }
+                    });
+                    //INI EXP(CMZ) 18052021 REQ19125
+
+                    //INI-RC3244
+                    enviarContacto();
+                    //FIN-RC3244
+
+                } else {
+                    alert("No puede ingresar mas de 6 documentos");
+                }
+            } else {
+                alert("Solo se permite archivos PDF, EXCEL, WORD, PNG y JPG");
+            }
+        });
+
+    });
+    //FIN EXP(CMZ) 18052021 REQ19125
+
+    function validateField(input) {
+        var data = $(input).data();
+        var msg = "";
+
+        if (data.valRequired && (input.value === "" || input.value === "0")) {
+            var msg = data.valRequired;
+        } else if (data.valLength && input.value.length > data.valLengthMax) {
+            var msg = data.valLength;
+        } else if (data.valRegex && new RegExp(data.valRegexPattern).test(input.value) === false) {
+            var msg = data.valRegex;
+        } else {
+            $('span[data-valmsg-for="' + input.name + '"]').html("");
+            $(input).data("valid", true)
+            return;
+        }
+
+        $(input).data("valid", false)
+        $('span[data-valmsg-for="' + input.name + '"]').html(msg);
+    }
+
+    function validateTipoCaso() {
+        if ($("#hdnTipoCaso").val() === "0") {
+            $("#hdnTipoCaso").data("valid", false);
+            $("#vldTipoCaso").html("Seleccione el tipo de caso");
+        } else {
+            $("#hdnTipoCaso").data("valid", true);
+            $("#vldTipoCaso").html("");
+        }
+    }
+
+    function validateForm() {
+        var fields = $('.form-control, #hdnTipoCaso').toArray()
+            .filter(function(element) {
+                return $(element).data("valid") === false;
+            });
+
+        return fields.length;
+    }
+
+    function selectTipoCaso(radio) {
+        $("#hdnTipoCaso").data("valid", true);
+        $("#vldTipoCaso").html("");
+        $("#hdnTipoCaso").val(radio.value);
+    }
+
+    //INI-BITA16401
+    function notificar(tipo, error, dato, flag)
+    {
+        var msg = "";
+        switch (flag) {
+            case 1:  //Error timeout servicio
+                msg = "<!DOCTYPE html>";
+                msg = msg + "<html>";
+                msg = msg + "<head>";
+                msg = msg + "<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>";
+                msg = msg + "<title></title>";
+                msg = msg + "</head>";
+                msg = msg + "<body>";
+                msg = msg + "<p>Error => Error de tiempo de espera de respuesta del servidor</p>";
+                msg = msg + "<p>Detalle =>" + " " + error + "</p>";
+                msg = msg + "<p>Datos =>" + " " + dato + "</p>";
+                msg = msg + "</body>";
+                msg = msg + "</html>";
+                break;
+        }
+
+        var _url = "https://api-col-prod.crossnet.la/WebApiMafperu/api/error/notificar?tipo=" + tipo + "&mensaje=" + msg + "&indicador=2";
+
+        $.ajax(_url, {
+            "type": "POST",
+            "dataType": "json",
+            "contentType": "application/json;charset=utf-8",
+            "timeout": 10000
+        })
+            .done(function (response, textStatus, jqXHR) {
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                alert("Hubo un error en el proceso de notificación. Por favor, verifique.");
+            });
+    }
+    //FIN-BITA16401
+
+    //INI-RC3244
+    function enviar_archivo(indicadorExito, guid, asunto, data) {
+        var _url = "https://api-col-prod.crossnet.la/WebApiMafperu/api/contacto/enviararchivo?indicadorExito=" + indicadorExito + "&guid=" + guid + "&asunto=" + asunto;
+
+        $.ajax(_url, {
+            "type": "POST",
+            "dataType": "json",
+            "contentType": false,
+            "processData": false,
+            "data": data,
+            "timeout": 60000
+        })
+            .done(function (response, textStatus, jqXHR) {
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                var dato = "Guid: " + guid;
+                notificar("CONTACTANOS", errorThrown, dato, 1);
+                alert("Estimado cliente, hemos recibido su caso correctamente, estaremos revisándolo para contactarnos con usted y brindarle una respuesta lo más antes posible. ¡Muchas gracias de parte de la familia de MAF!");
+
+                $("#modalWait").hide();
+                $('#btnSubmit').prop('disabled', false);
+                LimpiarControles();
+            });
+    }
+
+    function LimpiarControles() {
+        $('select[id=cboTipoDocumento]').val("");
+        $('input:text[id=txtNroDocumento]').val("");
+        $('input:text[id=txtNombres]').val("");
+        $('input:text[id=txtApPaterno]').val("");
+        $('input:text[id=txtApMaterno]').val("");
+        $('input:text[id=txtTelefono]').val("");
+        $('input:text[id=txtCorreo]').val("");
+        $('input:text[id=txtOperacion]').val("");
+        $('input:text[id=txtDescripcion]').val("");
+        $('select[id=cboTipoProducto]').val("");
+        $("#DocumentFiles").val("");
+
+        $('#cboMotivo')
+            .empty()
+            .append('<option value="">Seleccionar Motivo</option>');
+
+        $('select[id=cboMotivo]').val("");
+
+        $('#cboSubMotivo')
+            .empty()
+            .append('<option value="">Seleccionar Sub Motivo</option>');
+
+        $('select[id=cboSubMotivo]').val("");
+
+        document.getElementById("chkConsulta").checked = false;
+        document.getElementById("chkSolicitud").checked = false;
+        document.getElementById("chkTerminosCondiciones").checked = false;
+    }
+    //FIN-RC3244
+</script>
+
+<script>
+    function showStep(stepNumber) {
+        // Ocultar todos los pasos
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step3').style.display = 'none';
+
+        // Mostrar el paso actual
+        document.getElementById('step' + stepNumber).style.display = 'block';
+
+        // Si estamos en el paso 2, copiamos el tipo de documento y el número de documento ingresados en el paso 1
+        if (stepNumber === 2) {
+            var tipoDocumentoSeleccionado = document.getElementById('cboTipoDocumento').value;
+            document.getElementById('cboTipoDocumento2').value = tipoDocumentoSeleccionado;
+
+            var numeroDocumento = document.getElementById('txtNroDocumento').value;
+            document.getElementById('txtNroDocumento2').value = numeroDocumento;
+        }
+    }
+</script>
+
+
+
+<script>
+    function toggleButton() {
+        var checkbox = document.getElementById('flexCheckDefault');
+        var button = document.getElementById('btnContinuar');
+
+        // Habilitar o deshabilitar el botón basado en el estado del checkbox
+        button.disabled = !checkbox.checked;
+
+        // Cambiar el color de fondo del botón basado en el estado del checkbox
+        if (checkbox.checked) {
+            button.style.backgroundColor = '#EB0A1E';
+        } else {
+            button.style.backgroundColor = '#FF9191';
+        }
+    }
+</script>
+
+<script>
+    let currentTab = 0; // Empieza desde la primera pestaña
+
+    function showTab(tabIndex) {
+        // Esconde todas las pestañas y remueve la clase 'active' de todos los enlaces de navegación
+        let tabs = document.getElementsByClassName('tab-pane');
+        let navLinks = document.getElementsByClassName('nav-link');
+
+        for (let tab of tabs) {
+            tab.classList.remove('show', 'active');
+        }
+
+        for (let link of navLinks) {
+            link.classList.remove('active');
+        }
+
+        // Muestra la pestaña actual y añade la clase 'active' al enlace de navegación correspondiente
+        let currentTabId = `nav-${['datos', 'caso', 'confirmacion'][tabIndex]}`
+        document.getElementById(currentTabId).classList.add('show', 'active');
+
+        let currentNavLinkId = `nav-${['datos', 'caso', 'confirmacion'][tabIndex]}-tab`;
+        document.getElementById(currentNavLinkId).classList.add('active');
+    }
+
+    function nextTab() {
+        // Avanza a la siguiente pestaña y actualiza el estado del botón "Continuar"
+        currentTab = (currentTab + 1) % 3;
+        showTab(currentTab);
+
+        // Habilita el botón si el checkbox está marcado
+        let checkbox = document.getElementById('flexCheckDefault');
+        document.getElementById('btnContinuar').disabled = !checkbox.checked;
+    }
+
+    // Inicializa el tab mostrando el primero
+    showTab(currentTab);
+
+</script>
