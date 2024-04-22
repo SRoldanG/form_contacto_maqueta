@@ -588,6 +588,16 @@
             margin-top: 20px;
         }
 
+        .banner {
+            display: none; /* Ocultar todos los banners inicialmente */
+            position: absolute; /* Posicionarlos encima uno del otro */
+            transition: opacity 1s; /* Transición suave de la opacidad */
+        }
+        .visible {
+            display: block; /* Mostrar el banner activo */
+            opacity: 1; /* Opacidad completa */
+        }
+
     </style>
     <link rel='stylesheet' id='wp-block-library-css' href='https://mafperu.com/wp-includes/css/dist/block-library/style.css?ver=6.5' media='all' />
     <style id='classic-theme-styles-inline-css'>
@@ -1126,7 +1136,7 @@
 
                                         <div class="tab-content" id="nav-tabContent" style="">
                                             <div class="tab-pane fade show active" id="nav-datos" role="tabpanel" aria-labelledby="nav-datos-tab">
-                                                <div class="card_datos">
+                                                <div class="card_datos" style="font-size: 0.8vw">
                                                     <div class="card">
                                                         <div class="row">
                                                             <div class="form-group col-sm-6">
@@ -1179,8 +1189,6 @@
                                                                 <button type="button" class="btn_continuar" id="btnContinuar2" onclick="nextTab()" style="float:right">Siguiente<img class="img_paginador_siguiente" src="https://i.imgur.com/NfgeFxw.png"></button>
                                                             </div>
                                                         </div>
-
-
                                                     </div>
                                                     <div class="card" style="width: 30%; background-color: red; color: white; padding: 20px; border-radius: 0; border: none">
                                                         <h2 style="text-align: center;">¿Eres cliente MAF?</h2>
@@ -1201,47 +1209,134 @@
                                             </div>
 <!--                                            //Detallanos-->
                                             <div class="tab-pane fade" id="nav-caso" role="tabpanel" aria-labelledby="nav-caso-tab">
-                                                <div class="container mt-5">
+                                                <div class="container mt-5" style="font-size: 0.8vw">
                                                     <div class="card">
                                                         <div class="card-body">
                                                             <div class="row">
                                                                 <!-- Columna más ancha para el formulario -->
                                                                 <div class="col-md-9">
-                                                                    <div class="mb-2">
-                                                                        <label for="tipoProducto" class="form-label">Tipo de producto *</label>
-                                                                        <select class="form-select" id="tipoProducto" required>
-                                                                            <option selected>Crédito vehicular</option>
-                                                                            <!-- Otras opciones -->
-                                                                        </select>
-                                                                        <label for="tipoProducto" class="form-label">Tipo de producto *</label>
-                                                                        <select class="form-select" id="tipoProducto" required>
-                                                                            <option selected>Crédito vehicular</option>
-                                                                            <!-- Otras opciones -->
-                                                                        </select>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="mb-2">
+                                                                                <label for="tipoProducto" class="form-label">Tipo de producto *</label>
+                                                                                <select class="form-select" id="tipoProducto" required  disabled>
+                                                                                    <option selected>Crédito vehicular</option>
+                                                                                    <!-- Otras opciones -->
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <div class="mb-2">
+                                                                                <label for="nro_contrato" class="form-label">Nro. Operación *</label>
+                                                                                <select class="form-select" id="nro_contrato" required  name="nro_contrato">
+                                                                                    <option selected>7514585</option>
+                                                                                    <!-- Otras opciones -->
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <div class="mb-2">
+                                                                                <label for="nro_placa" class="form-label">Placa *</label>
+                                                                                <select class="form-select" id="nro_placa" required  name="nro_placa">
+                                                                                    <option selected>BH465</option>
+                                                                                    <!-- Otras opciones -->
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="mb-3">
-                                                                        <label for="consultaSolicitud" class="form-label">Consulta o Solicitud *</label>
-                                                                        <select class="form-select" id="consultaSolicitud" required>
-                                                                            <option selected>Seleccione</option>
-                                                                            <!-- Otras opciones -->
-                                                                        </select>
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="mb-2">
+                                                                                <label for="consultaSolicitud" class="form-label">Consulta o Solicitud *</label>
+                                                                                <select class="form-select" id="consultaSolicitud" required>
+                                                                                    <option selected>Seleccione</option>
+                                                                                    <!-- Otras opciones -->
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8">
+                                                                          <div class="mb-3">
+                                                                            <label for="motivo" class="form-label">Motivo *</label>
+                                                                            <select class="form-select" id="motivo" required>
+                                                                                <option selected>Seleccione</option>
+                                                                                <!-- Otras opciones -->
+                                                                            </select>
+                                                                          </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="mb-3">
-                                                                        <label for="submotivo" class="form-label">Submotivo *</label>
-                                                                        <select class="form-select" id="submotivo" required>
-                                                                            <option selected>Seleccione</option>
-                                                                            <!-- Otras opciones -->
-                                                                        </select>
+                                                                    <div class="row">
+                                                                        <div class="col-md-9">
+                                                                            <div class="mb-2">
+                                                                                <label for="submotivo" class="form-label">Submotivo *</label>
+                                                                                <select class="form-select" id="submotivo" required name="submotivo">
+                                                                                    <option selected>Seleccione</option>
+                                                                                    <!-- Otras opciones -->
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <div class="mb-3">
+                                                                                <label for="nro_dias" class="form-label">Atención *</label>
+                                                                                <select class="form-select" id="nro_dias" required name="nro_dias" disabled>
+                                                                                    <option selected>Seleccione</option>
+                                                                                    <!-- Otras opciones -->
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="mb-3">
-                                                                        <textarea class="form-control" placeholder="Deje un comentario aquí" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                                    <div class="row">
+                                                                        <div class="mb-3">
+                                                                            <textarea class="form-control" placeholder="tipificacion de caso" id="floatingTextarea2" style="height: 20vh"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="mb-3">
+                                                                            <h5 style="color: red; font-weight: bold">Descríbenos tu caso</h5>
+                                                                            <p style="font-size: 0.8vw">Indíquenos detalladamente su consulta o solicitud. Y dependiendo del caso, además debrá brindarnos información referente al número de meses, monto, fechas, entre otros datos relevantes para usted.</p>
+                                                                            <textarea class="form-control" placeholder="descripcion de caso" id="floatingTextarea3" style="height: 20vh"></textarea>
+                                                                            <span style="font-weight: bolder; font-size: 0.6vw">(*) Información obligatoria</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="mb-2">
+                                                                                <h5>Documentos adjuntos</h5>
+                                                                                <p style="font-size: 0.8vw">Puede adjuntar vouchers, estados de cuenta, imágenes, u otros documentos para sustentar su caso.</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="mb-3">
+                                                                                <div style="position: relative;">
+                                                                                    <input type="file" id="DocumentFiles" name="DocumentFiles" multiple="" style="opacity: 0; position: absolute; left: 0; top: 0; width: 100%; height: 100%; cursor: pointer;"/>
+                                                                                    <button type="button" id="customButton" style="width: 100%; border: none; border-radius: 5px; font-size: 0.8vw; padding-bottom: 10px; padding-top: 10px; " >Adjuntar documentos <img src="https://i.imgur.com/fYK08ph.png" style="width: 1.3vw; float: right; padding-bottom: ; padding-top: ; margin-right: 20px"></button>
+                                                                                </div>
+                                                                                <!--<input type="file" id="DocumentFiles" name="DocumentFiles" multiple="" style="">-->
+                                                                                <p style="font-size: 0.6vw; margin-top: 10px">*Máximo 10 archivos de 30 MB cada uno.</br>*Los formatos permitidos son PNG, JPEG, GIF, DOCX, XLS, XLSX, PDF.</p>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <!-- Columna más estrecha para la imagen -->
-                                                                <div class="col-md-3 d-flex flex-column justify-content-center">
-                                                                    <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="Descripción de la imagen">
-                                                                    <!-- Asegúrate de reemplazar 'path-to-your-image.jpg' con la ruta real a tu imagen -->
-                                                                    <p style="font-size: 1vw">¡Soy Chat Mafito! Y estoy aquí para resolver tus consultas. Me encuentras en el Portal Web.</p>
+                                                                <div class="col-md-3 d-flex flex-column" style="text-align: center; padding-top: 20px; justify-items: center; align-content: center;align-items: center">
+                                                                    <div id="banner1" class="banner visible">
+                                                                        <h3 style="color: red; font-weight: bold">¡Soy Chat Mafito!</h3>
+                                                                        <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="Descripción de la imagen">
+                                                                        <p style="font-size: 1vw; font-weight: bold">Y estoy aquí para resolver tus consultas.</p>
+                                                                        <p style="font-size: 1vw">Me encuentras en el <br><span style="color: red; font-weight: bold"> Portal Web</span></p>
+                                                                        <img src="https://i.imgur.com/gUr5rcH.png">
+                                                                    </div>
+                                                                    <div id="banner2" class="banner">
+                                                                        <p style="font-size: 1vw">Registrate en <br><span style="color: red; font-weight: bold">Mi Portal Web</span> y</br>podrás:</p>
+                                                                        <span style="font-size: 1vw; font-weight: bold">Descargar tu contrato</span>
+                                                                        </br>
+                                                                        </br>
+                                                                        <img src="https://i.imgur.com/hkTaQxq.png" style="width: 10vw">
+                                                                        </br>
+                                                                        </br>
+                                                                        <p style="font-size: 1vw; font-weight: bold">Revisar tu Estado de Cuenta y Cronograma de pagos. Y si deseas, descargarlos!</p>
+                                                                        <img src="https://i.imgur.com/H4L8wrj.png" style="width: 10vw">
+                                                                    </div>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1269,81 +1364,7 @@
                         </div>
 
 
-<!--                        <div class="form-group col-md-6">-->
-<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-required="Ingrese su nombre o razón social" id="txtNombres" name="txtNombres" placeholder="Tus nombres o razón social" type="text" value="">-->
-<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNombres" data-valmsg-replace="true" id="vldNombres"></span>-->
-<!--                        </div>-->
-<!--                        <div class="form-group col-md-6">-->
-<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido paterno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido parterno o &#39;-&#39; si tiene razón social" id="txtApPaterno" name="txtApPaterno" placeholder="Apellido Paterno" type="text" value="">-->
-<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApPaterno" data-valmsg-replace="true" id="vldApPaterno"></span>-->
-<!--                        </div>-->
-<!--                        <div class="form-group col-md-6">-->
-<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido materno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido marterno o &#39;-&#39; si tiene razón social" id="txtApMaterno" name="txtApMaterno" placeholder="Apellido Materno" type="text" value="">-->
-<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApMaterno" data-valmsg-replace="true" id="vldApMaterno"></span>-->
-<!--                        </div>-->
-<!--                        <div class="form-group col-md-6">-->
-<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Teléfono inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de teléfono" id="txtTelefono" name="txtTelefono" placeholder="Teléfono" type="text" value="">-->
-<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtTelefono" data-valmsg-replace="true" id="vldTelefono"></span>-->
-<!--                        </div>-->
-<!--                        <div class="form-group col-md-6">-->
-<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Correo inválido" data-val-regex-pattern="^([a-zA-Z0-9._+-]+)(@[a-zA-Z0-9-]+)(.[a-zA-Z]{2,4}){2,}$" data-val-required="Ingrese su e-mail" id="txtCorreo" name="txtCorreo" placeholder="Email" type="text" value="">-->
-<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtCorreo" data-valmsg-replace="true" id="vldCorreo"></span>-->
-<!--                        </div>-->
-<!--                        <div class="form-group col-md-6">-->
-<!--                            <select class="form-control" data-val="true" data-val-required="Seleccione el Tipo de Producto" id="cboTipoProducto" name="cboTipoProducto" placeholder="Tipo de producto">-->
-<!--                                <option value="" selected="selected">Tipo de producto</option>-->
-<!--                                <option value="460710000">Crédito vehicular</option>-->
-<!--                                <option value="460710001">Leasing</option>-->
-<!--                                <option value="460710002">Crédito de consumo</option>-->
-<!--                                <option value="460710003">Otros</option>-->
-<!--                            </select>-->
-<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="cboTipoProducto" data-valmsg-replace="true" id="vldTipoProducto"></span>-->
-<!--                        </div>-->
-<!--                        <div class="form-group col-md-6">-->
-<!--                            <select class="form-control" data-val="true" data-val-required="Seleccione el Motivo" id="cboMotivo" name="cboMotivo"></select>-->
-<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="cboMotivo" data-valmsg-replace="true" id="vldMotivo"></span>-->
-<!--                        </div>-->
-<!--                        <div class="form-group col-md-6">-->
-<!--                            <select class="form-control" id="cboSubMotivo" name="cboSubMotivo"></select>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash;FIN-RC3244&ndash;&gt;-->
-<!--                        <div class="form-group col-md-12">-->
-<!--                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 4000 caracteres" data-val-length-max="4000" data-val-required="Es necesario detallar la consulta o solicitud" id="txtDescripcion" name="txtDescripcion" placeholder="Bríndanos el detalle de tu consulta o solicitud para poder ayudarte lo más pronto posible." type="text" value="">-->
-<!--                            <span class="field-validation-valid text-danger validator" data-valmsg-for="txtDescripcion" data-valmsg-replace="true" id="vldDescripcion"></span>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash; INI EXP(CMZ) 18052021 - REQ19125 &ndash;&gt;-->
-<!--                        <div class="col-md-12">-->
-<!--                            <input type="file" id="DocumentFiles" name="DocumentFiles" multiple="">-->
-<!--                        </div>-->
-<!--                        <div class="producto-foto" hidden="">-->
-<!--                            <input type="text" name="NumDoc" id="NumDoc" value="">-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash;  FIN EXP(CMZ) 18052021 - REQ19125&ndash;&gt;-->
-<!--                        <div class="form-group col-md-12">-->
-<!--                            <tr>-->
-<!--                                <td colspan="3" class="mensaje">-->
-<!--                                    <table>-->
-<!--                                        <tr>-->
-<!--                                            <td><p><input id="chkTerminosCondiciones" name="chkTerminos" type="checkbox" /></p></td>-->
-<!--                                            <td style="width:auto;"><p>He leído y acepto las-->
 
-<!--                                                <a  href="#" class="" data-bs-toggle="modal" data-bs-target="#modalTerminos">-->
-<!--                                                    condiciones de políticas de seguridad-->
-<!--                                                </a>-->
-<!--                                            </p>-->
-<!--                                            </td>-->
-<!--                                        </tr>-->
-<!--                                    </table>-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                        </div>-->
-                        <!--</div>-->
-
-<!--                        BOTON ENVIAR -->
-<!--                        <div class="form-group col-md-12 text-center">-->
-<!--                            <button id="btnSubmit" type="submit" class="btn btn-primary" disabled="">ENVIAR</button>-->
-<!--                        </div>-->
-                        <!--</div>-->
                     </div>
                     </form>
 
@@ -1442,10 +1463,6 @@
                     </div>
                 </div>
 
-
-
-                <!-- block maf end -->
-            </div>
         </section>
         <section class="section-4 row m-0">
             <div class="col-md-5 conteTypesAttention">
@@ -2377,4 +2394,25 @@
     // Inicializa el tab mostrando el primero
     showTab(currentTab);
 
+</script>
+
+<script>
+    var currentBanner = 1;
+    function switchBanner() {
+        var banner1 = document.getElementById('banner1');
+        var banner2 = document.getElementById('banner2');
+
+        if (currentBanner === 1) {
+            banner1.classList.remove('visible');
+            banner2.classList.add('visible');
+            currentBanner = 2;
+        } else {
+            banner2.classList.remove('visible');
+            banner1.classList.add('visible');
+            currentBanner = 1;
+        }
+    }
+
+    // Cambiar cada 5 segundos
+    setInterval(switchBanner, 5000);
 </script>
