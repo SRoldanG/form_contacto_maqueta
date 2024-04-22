@@ -605,7 +605,45 @@
             display: inline; /* Mostrar la imagen activa */
         }
 
+        #image-tooltip {
+            position: absolute;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #aaaaaa;
+            border-color: #8ed1fc;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .btn.btn-danger.btn_p3 {
+            background-color: red;
+            border-radius: 20px;
+            color: white;
+            padding-left: 15px;
+            padding-right: 15px;
+            width:45%;
+            font-size: 1vw;
+            border: none;
+            font-weight: bold;
 
+        }
+          .p_confirmacion span{
+            font-weight: bold;
+          }
+
+          .p_confirmacion{
+              border: 1.5px solid #E9EAE8; /* Borde negro, ajusta el color como necesites */
+              padding: 10px; /* Espacio alrededor del texto, ajusta como necesites */
+              width: 100%; /* Ancho del rectángulo, ajusta según necesites */
+              margin: auto; /* Centra el rectángulo si está en un contenedor más grande */
+              background-color: #fff; /* Fondo blanco, ajusta el color como necesites */
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil, opcional */
+              text-align: center;
+              align-content: center;
+              justify-content: center;
+              align-items: center;
+          }
     </style>
     <link rel='stylesheet' id='wp-block-library-css' href='https://mafperu.com/wp-includes/css/dist/block-library/style.css?ver=6.5' media='all' />
     <style id='classic-theme-styles-inline-css'>
@@ -1243,7 +1281,7 @@
                                                                         </div>
                                                                         <div class="col-md-3">
                                                                             <div class="mb-2">
-                                                                                <label for="nro_placa" class="form-label">Placa <img id="image1" class="img-toggle" src="https://i.imgur.com/w5TxXhX.png" style="width: 0.8vw"><img id="image2" class="img-toggle" src="https://i.imgur.com/bUuHRCr.png" style="width: 0.8vw"></label>
+                                                                                <label for="nro_placa" class="form-label">Placa <img id="image1" class="img-toggle" src="https://i.imgur.com/w5TxXhX.png" style="width: 1.2vw; margin-left: 3px"><img id="image2" class="img-toggle" src="https://i.imgur.com/bUuHRCr.png" style="width: 1.2vw; margin-left: 3px"></label>
                                                                                 <select class="form-select" id="nro_placa" required  name="nro_placa" style="font-size: 0.8vw">
                                                                                     <option selected>BH465</option>
                                                                                     <!-- Otras opciones -->
@@ -1254,36 +1292,36 @@
                                                                     <div class="row">
                                                                         <div class="col-md-4">
                                                                             <div class="mb-2">
-                                                                                <label for="consultaSolicitud" class="form-label">Consulta o Solicitud</label>
-                                                                                <select class="form-select" id="consultaSolicitud" required style="font-size: 0.8vw">
-                                                                                    <option selected>Seleccione</option>
+                                                                                <label for="tipoCasoSelect" class="form-label">Consulta o Solicitud<img src="https://i.imgur.com/USW5nc6.png" style="width: 1vw; margin-left: 8px" alt="Descripción Alternativa" class="tooltip_1" data-tooltip-content="Consulta*: Requerimiento de información <br> o duda respecto a algún producto o <br> servicio de la financiera.<br>
+Solicitud*: Servicio adicional o exigencia <br> extra a la naturaleza del producto.">
+                                                                                    <div id="image-tooltip" style="display: none;"></div></label>
+                                                                                <select class="form-select" id="tipoCasoSelect" name="tipoCasoSelect" required style="font-size: 0.8vw">
+                                                                                    <option value="">Seleccione</option>
+                                                                                    <option value="27039">Consulta</option>
+                                                                                    <option value="27040">Solicitud</option>
                                                                                     <!-- Otras opciones -->
                                                                                 </select>
+
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-8">
                                                                           <div class="mb-3">
-                                                                            <label for="motivo" class="form-label">Motivo *</label>
-                                                                            <select class="form-select" id="motivo" required style="font-size: 0.8vw">
-                                                                                <option selected>Seleccione</option>
-                                                                                <!-- Otras opciones -->
-                                                                            </select>
+                                                                            <label for="cboMotivo" class="form-label">Motivo *</label>
+                                                                            <select class="form-select" required style="font-size: 0.8vw" id="cboMotivo" name="cboMotivo"></select>
+                                                                              <span class="field-validation-valid text-danger validator" data-valmsg-for="cboMotivo" data-valmsg-replace="true" id="vldMotivo"></span>
                                                                           </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row">
                                                                         <div class="col-md-9">
                                                                             <div class="mb-2">
-                                                                                <label for="submotivo" class="form-label">Submotivo *</label>
-                                                                                <select class="form-select" id="submotivo" required name="submotivo" style="font-size: 0.8vw">
-                                                                                    <option selected>Seleccione</option>
-                                                                                    <!-- Otras opciones -->
-                                                                                </select>
+                                                                                <label for="cboSubMotivo" class="form-label">Submotivo *</label>
+                                                                                <select class="form-select" required name="submotivo" style="font-size: 0.8vw" id="cboSubMotivo" name="cboSubMotivo"></select>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-3">
                                                                             <div class="mb-3">
-                                                                                <label for="nro_dias" class="form-label">Atención <img id="image_atencion1" class="img-toggle" src="https://i.imgur.com/NKP5S5R.png" style="width: 0.8vw"><img id="image_atencion2" class="img-toggle" src="https://i.imgur.com/dbJIr2q.png" style="width: 0.8vw"></label>
+                                                                                <label for="nro_dias" class="form-label">Atención<img id="image_atencion1" class="img-toggle" src="https://i.imgur.com/NKP5S5R.png" style="width: 1vw"><img id="image_atencion2" class="img-toggle" src="https://i.imgur.com/dbJIr2q.png" style="width: 1vw"></label>
                                                                                 <select class="form-select" id="nro_dias" required name="nro_dias" disabled style="font-size: 0.8vw">
                                                                                     <option selected>15</option>
                                                                                     <!-- Otras opciones -->
@@ -1355,7 +1393,195 @@
                                             </div>
 <!--                                            //Confirmacion-->
                                             <div class="tab-pane fade" id="nav-confirmacion" role="tabpanel" aria-labelledby="nav-confirmacion-tab">
-                                                <img src="https://i.imgur.com/6jbwgwQ.png" style="width: 1.2vw; margin-left: 8px">
+                                                <div class="container mt-5" style="font-size: 0.8vw; ">
+                                                <div class="card" style="background-image: url(https://i.imgur.com/MT9E4by.png); background-repeat: no-repeat">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <!-- Columna más ancha para el formulario -->
+                                                            <div class="col-md-9" style="">
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3" id="btn_tdocumento"><i>1RO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Tipo de documento:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3" id="nrodocumento"><i>2DO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Número de documento:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3"><i>3RO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Nombre:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3"><i>4TO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Correo electrónico:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3"><i>5TO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Celular:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3"><i>6TO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Tipo de producto:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3"><i>7MO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Nro. Operación:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3"><i>8VO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Placa:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3"><i>9NO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Motivo:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3"><i>10MO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Consulta o Solicitud:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3"><i>11VO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Documentos adjuntos:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="mb-2">
+                                                                            <button type="button" class="btn btn-danger btn_p3"><i>12VO</i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="mb-2">
+                                                                            <div class="p_confirmacion" style="display: flex;">
+                                                                                <span>Descripción del caso:</span><input style="border: none">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Columna más estrecha para la imagen -->
+                                                            <div class="col-md-3 d-flex flex-column" style="text-align: center; padding-top: 20px; justify-items: center; align-content: center;align-items: center">
+                                                                <div id="" class="banner visible">
+                                                                    <h3 style="color: red; font-weight: bold; font-size: 1.3vw">¡Soy Chat Mafito!</h3></br>
+                                                                    <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="mafito" style="width:10vw;">
+                                                                    <p style="font-size: 1vw; font-weight: bold">Y estoy aquí para resolver tus consultas.</p>
+                                                                    <p style="font-size: 1vw">Me encuentras en el <br><span style="color: red; font-weight: bold"> Portal Web</span></p>
+                                                                    <img src="https://i.imgur.com/gUr5rcH.png" alt="mafito" style="width:10vw;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1713,6 +1939,25 @@
 <script src="https://mafperu.com/wp-content/themes/mafperu2023/js/jquery.alphanumeric.js?ver=1.5.0" id="newmafperu2023-alphanumeric-defer-js"></script>
 
 </body>
+
+<script>
+    $(document).ready(function() {
+        $('.tooltip_1').hover(function() {
+            // Mostrar tooltip
+            var content = $(this).attr('data-tooltip-content');
+            $('#image-tooltip').html(content).show();
+        }, function() {
+            // Ocultar tooltip
+            $('#image-tooltip').hide();
+        }).mousemove(function(e) {
+            // Actualizar la posición del tooltip con el movimiento del mouse
+            $('#image-tooltip').css({
+
+            });
+        });
+    });
+
+</script>
 </html>
 
 <script type="text/javascript">
@@ -1793,28 +2038,30 @@
 
         var listaMotivo = [];
 
-        function CargaMotivo(element) {
-            var _consulta = $('input:radio[id=chkConsulta]:checked').val();
-            var _solicitud = $('input:radio[id=chkSolicitud]:checked').val();
+        $("#tipoCasoSelect").on("change", function() {
+            var tipoCaso = $(this).val();
             var _tipo = "";
 
-            if (_consulta != undefined) {
+            if (tipoCaso === "27039") {
                 _tipo = "C";
-            }
-
-            if (_solicitud != undefined) {
+            } else if (tipoCaso === "27040") {
                 _tipo = "S";
             }
 
-            if (_tipo != "") {
+            CargaMotivo($('#cboMotivo'), _tipo);
+            CargaSubMotivo("#cboSubMotivo", _tipo);
+        });
+
+        function CargaMotivo(element, tipo) {
+            if (tipo != "") {
                 $.ajax({
                     type: "GET",
-                    url: 'https://api-col-prod.crossnet.la/WebApiMafperu/api/contacto/listarmotivo?tipo=' + _tipo,
+                    url: 'https://api-col-prod.crossnet.la/WebApiMafperu/api/contacto/listarmotivo?tipo=' + tipo,
                     success: function(data) {
                         listaMotivo = data;
                         htmlMotivo(element);
                     }
-                })
+                });
             } else {
                 htmlMotivo(element);
             }
@@ -1829,38 +2076,24 @@
             })
         }
 
-        CargaMotivo($('#cboMotivo'));
+        CargaSubMotivo("#cboMotivo");
 
-        var listaSubMotivo = [];
 
-        function CargaSubMotivo(element) {
-            var _id = $('#cboMotivo').val();
-            var _consulta = $('input:radio[id=chkConsulta]:checked').val();
-            var _solicitud = $('input:radio[id=chkSolicitud]:checked').val();
-            var _tipo = "";
-
-            if (_consulta != undefined) {
-                _tipo = "C";
-            }
-
-            if (_solicitud != undefined) {
-                _tipo = "S";
-            }
-
-            if (_tipo != "" && _id != "") {
+        function CargaSubMotivo(element, tipo, motivoId) {
+            if (tipo != "" && motivoId != "") {
                 $.ajax({
                     type: "GET",
-                    url: 'https://api-col-prod.crossnet.la/WebApiMafperu/api/contacto/listarsubmotivo?tipo=' + _tipo + '&id=' + _id,
-                    async: false,
+                    url: 'https://api-col-prod.crossnet.la/WebApiMafperu/api/contacto/listarsubmotivo?tipo=' + tipo + '&id=' + motivoId,
                     success: function(data) {
                         listaSubMotivo = data;
                         htmlSubMotivo(element);
                     }
-                })
+                });
             } else {
                 htmlSubMotivo(element);
             }
         }
+
 
         function htmlSubMotivo(element) {
             var $ele = $(element);
@@ -1870,30 +2103,16 @@
                 $ele.append($('<option/>').val(val.Codigo).text(val.Nombre));
             })
         }
-
         CargaSubMotivo("#cboSubMotivo");
 
         $("#cboMotivo").on("change", function() {
-            CargaSubMotivo("#cboSubMotivo");
+            var motivo = $(this).val(); // Captura el motivo seleccionado
+            var tipoCaso = $('#tipoCasoSelect').val(); // Debes obtener el tipo de caso actual también
+            var _tipo = tipoCaso === "27039" ? "C" : tipoCaso === "27040" ? "S" : "";
+            CargaSubMotivo("#cboSubMotivo", _tipo, motivo); // Asegúrate de pasar el tipo y el motivo correctos
         });
 
-        $("#cboSubMotivo").on("change", function() {
-            var id = $('select[id=cboSubMotivo]').val();
-            $("#hdSubMotivoCod").val(id);
 
-            var des = $('select[name="cboSubMotivo"] option:selected').text();
-            $("#hdSubMotivoDes").val(des);
-        });
-
-        $("#chkConsulta").click(function() {
-            CargaMotivo($('#cboMotivo'));
-            CargaSubMotivo("#cboSubMotivo");
-        });
-
-        $("#chkSolicitud").click(function() {
-            CargaMotivo($('#cboMotivo'));
-            CargaSubMotivo("#cboSubMotivo");
-        });
         //FIN-RC3244
 
         $("#frmRegistro").on("submit", function(e) {
