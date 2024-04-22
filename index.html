@@ -590,7 +590,7 @@
 
         .banner {
             display: none; /* Ocultar todos los banners inicialmente */
-            position: absolute; /* Posicionarlos encima uno del otro */
+            /*position: absolute; !* Posicionarlos encima uno del otro *!*/
             transition: opacity 1s; /* Transición suave de la opacidad */
         }
         .visible {
@@ -598,6 +598,12 @@
             opacity: 1; /* Opacidad completa */
         }
 
+        .img-toggle {
+            display: none; /* Ocultar todas las imágenes inicialmente */
+        }
+        .img-toggle.visible {
+            display: inline; /* Mostrar la imagen activa */
+        }
     </style>
     <link rel='stylesheet' id='wp-block-library-css' href='https://mafperu.com/wp-includes/css/dist/block-library/style.css?ver=6.5' media='all' />
     <style id='classic-theme-styles-inline-css'>
@@ -1169,7 +1175,6 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-
                                                             <div class="form-group col-md-6">
                                                                 <label>Correo electrónico</label>
                                                                 <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Correo inválido" data-val-regex-pattern="^([a-zA-Z0-9._+-]+)(@[a-zA-Z0-9-]+)(.[a-zA-Z]{2,4}){2,}$" data-val-required="Ingrese su e-mail" id="txtCorreo" name="txtCorreo" placeholder="" type="text" value="">
@@ -1181,7 +1186,7 @@
                                                                 <span class="field-validation-valid text-danger validator" data-valmsg-for="txtTelefono" data-valmsg-replace="true" id="vldTelefono"></span>
                                                             </div>
                                                         </div>
-                                                        <div class="row" >
+                                                        <div class="row">
                                                             <div class="form-group col-md-6">
                                                                 <button type="button" class="btn_atras" onclick="showStep(1)" style="justify-content: flex-end"><img class="img_paginador_atras" src="https://i.imgur.com/u9fPLN4.png">Atrás</button>
                                                             </div>
@@ -1236,7 +1241,7 @@
                                                                         </div>
                                                                         <div class="col-md-3">
                                                                             <div class="mb-2">
-                                                                                <label for="nro_placa" class="form-label">Placa *</label>
+                                                                                <label for="nro_placa" class="form-label">Placa <img id="image1" class="img-toggle" src="https://i.imgur.com/w5TxXhX.png" style="width: 0.8vw"><img id="image2" class="img-toggle" src="https://i.imgur.com/bUuHRCr.png" style="width: 0.8vw"></label>
                                                                                 <select class="form-select" id="nro_placa" required  name="nro_placa">
                                                                                     <option selected>BH465</option>
                                                                                     <!-- Otras opciones -->
@@ -1247,7 +1252,7 @@
                                                                     <div class="row">
                                                                         <div class="col-md-4">
                                                                             <div class="mb-2">
-                                                                                <label for="consultaSolicitud" class="form-label">Consulta o Solicitud *</label>
+                                                                                <label for="consultaSolicitud" class="form-label">Consulta o Solicitud</label>
                                                                                 <select class="form-select" id="consultaSolicitud" required>
                                                                                     <option selected>Seleccione</option>
                                                                                     <!-- Otras opciones -->
@@ -1276,9 +1281,9 @@
                                                                         </div>
                                                                         <div class="col-md-3">
                                                                             <div class="mb-3">
-                                                                                <label for="nro_dias" class="form-label">Atención *</label>
+                                                                                <label for="nro_dias" class="form-label">Atención <img id="image_atencion1" class="img-toggle" src="https://i.imgur.com/NKP5S5R.png" style="width: 0.8vw"><img id="image_atencion2" class="img-toggle" src="https://i.imgur.com/dbJIr2q.png" style="width: 0.8vw"></label>
                                                                                 <select class="form-select" id="nro_dias" required name="nro_dias" disabled>
-                                                                                    <option selected>Seleccione</option>
+                                                                                    <option selected>15</option>
                                                                                     <!-- Otras opciones -->
                                                                                 </select>
                                                                             </div>
@@ -1319,11 +1324,11 @@
                                                                 <!-- Columna más estrecha para la imagen -->
                                                                 <div class="col-md-3 d-flex flex-column" style="text-align: center; padding-top: 20px; justify-items: center; align-content: center;align-items: center">
                                                                     <div id="banner1" class="banner visible">
-                                                                        <h3 style="color: red; font-weight: bold">¡Soy Chat Mafito!</h3>
-                                                                        <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="Descripción de la imagen">
+                                                                        <h3 style="color: red; font-weight: bold; font-size: 1.3vw">¡Soy Chat Mafito!</h3></br>
+                                                                        <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="mafito" style="width:10vw;">
                                                                         <p style="font-size: 1vw; font-weight: bold">Y estoy aquí para resolver tus consultas.</p>
                                                                         <p style="font-size: 1vw">Me encuentras en el <br><span style="color: red; font-weight: bold"> Portal Web</span></p>
-                                                                        <img src="https://i.imgur.com/gUr5rcH.png">
+                                                                        <img src="https://i.imgur.com/gUr5rcH.png" alt="mafito" style="width:10vw;">
                                                                     </div>
                                                                     <div id="banner2" class="banner">
                                                                         <p style="font-size: 1vw">Registrate en <br><span style="color: red; font-weight: bold">Mi Portal Web</span> y</br>podrás:</p>
@@ -1342,9 +1347,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                    <br>
-
-                                                    <button type="button" class="btn_atras" onclick="showStep(1)">Atrás</button>
+                                                    </br>
+                                                    <button type="button" class="btn_atras" onclick="showStep(1)" style="font-size: 0.8vw">Atrás</button>
                                                 </div>
                                             </div>
 <!--                                            //Confirmacion-->
@@ -1363,9 +1367,6 @@
                             <button type="submit">Enviar</button>
                         </div>
 
-
-
-                    </div>
                     </form>
 
                     <!--INI-Modal Procesando-->
@@ -1462,7 +1463,7 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
         </section>
         <section class="section-4 row m-0">
             <div class="col-md-5 conteTypesAttention">
@@ -2415,4 +2416,31 @@
 
     // Cambiar cada 5 segundos
     setInterval(switchBanner, 5000);
+</script>
+
+<script>
+    // Función para alternar la visibilidad de las imágenes
+    function toggleImages(imageId1, imageId2) {
+        var img1 = document.getElementById(imageId1);
+        var img2 = document.getElementById(imageId2);
+
+        // Comprobar cuál imagen está visible y alternarla
+        if (img1.classList.contains('visible')) {
+            img1.classList.remove('visible');
+            img2.classList.add('visible');
+        } else {
+            img2.classList.remove('visible');
+            img1.classList.add('visible');
+        }
+    }
+
+    // Inicializar la primera imagen de cada conjunto como visible
+    document.getElementById('image1').classList.add('visible');
+    document.getElementById('image_atencion1').classList.add('visible');
+
+    // Alternar las imágenes de 'Placa' cada 500 milisegundos (0.5 segundos)
+    setInterval(function() { toggleImages('image1', 'image2'); }, 500);
+    // Alternar las imágenes de 'Atención' cada 500 milisegundos (0.5 segundos)
+    setInterval(function() { toggleImages('image_atencion1', 'image_atencion2'); }, 500);
+
 </script>
