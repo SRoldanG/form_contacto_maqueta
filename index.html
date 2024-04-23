@@ -1179,78 +1179,209 @@
                                                 <a class="nav-link" id="nav-confirmacion-tab" data-bs-toggle="tab" href="#nav-confirmacion" role="tab" aria-controls="nav-confirmacion" aria-selected="false" style="border: 2px solid">3. Confirmación<img src="https://i.imgur.com/6jbwgwQ.png" style="width: 1.2vw; margin-left: 8px"></a>
                                             </nav>
                                         </div>
-
+                                    <!--TUS DATOS -->
                                         <div class="tab-content" id="nav-tabContent" style="">
                                             <div class="tab-pane fade show active" id="nav-datos" role="tabpanel" aria-labelledby="nav-datos-tab">
-                                                <div class="card_datos" style="font-size: 0.8vw">
+                                                <div class="container mt-5" style="font-size: 0.8vw">
                                                     <div class="card">
-                                                        <div class="row">
-                                                            <div class="form-group col-sm-4">
-                                                                <label>Tipo de documento</label>
-                                                                <select class="form-control" data-val="true" data-val-required="Seleccione el Tipo de Documento" id="cboTipoDocumento2" name="cboTipoDocumento" disabled style="font-size: 0.8vw"></select>
-                                                            </div>
-                                                            <div class="form-group col-sm-8">
-                                                                <label>Número de documento</label>
-                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Número de documento inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de documento" id="txtNroDocumento2" name="txtNroDocumento" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">
-                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNroDocumento" data-valmsg-replace="true" id="vldNroDocumento2"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="form-group col-md-12" style="">
-                                                                <label>Nombres</label>
-                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-required="Ingrese su nombre o razón social" id="txtNombres" name="txtNombres" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">
-                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNombres" data-valmsg-replace="true" id="vldNombres"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="form-group col-md-6" style="">
-                                                                <label>Apellido Paterno</label>
-                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido paterno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido parterno o &#39;-&#39; si tiene razón social" id="txtApPaterno" name="txtApPaterno" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">
-                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApPaterno" data-valmsg-replace="true" id="vldApPaterno"></span>
-                                                            </div>
-                                                            <div class="form-group col-md-6" style="">
-                                                                <label>Apellido Materno</label>
-                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido materno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido marterno o &#39;-&#39; si tiene razón social" id="txtApMaterno" name="txtApMaterno" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">
-                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApMaterno" data-valmsg-replace="true" id="vldApMaterno"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="form-group col-md-8">
-                                                                <label>Correo electrónico</label>
-                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Correo inválido" data-val-regex-pattern="^([a-zA-Z0-9._+-]+)(@[a-zA-Z0-9-]+)(.[a-zA-Z]{2,4}){2,}$" data-val-required="Ingrese su e-mail" id="txtCorreo" name="txtCorreo" placeholder="" type="text" value="" style="font-size: 0.8vw">
-                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtCorreo" data-valmsg-replace="true" id="vldCorreo"></span>
-                                                            </div>
-                                                            <div class="form-group col-md-4">
-                                                                <label>Celular</label>
-                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Teléfono inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de teléfono" id="txtTelefono" name="txtTelefono" placeholder="" type="text" value="" style="font-size: 0.8vw">
-                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtTelefono" data-valmsg-replace="true" id="vldTelefono"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="form-group col-md-6">
-                                                                <button type="button" class="btn_atras" onclick="showStep(1)" style="justify-content: flex-end"><img class="img_paginador_atras" src="https://i.imgur.com/u9fPLN4.png">Atrás</button>
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-                                                                <button type="button" class="btn_continuar" id="btnContinuar2" onclick="nextTab()" style="float:right">Siguiente<img class="img_paginador_siguiente" src="https://i.imgur.com/NfgeFxw.png"></button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card" style="width: 30%; background-color: red; color: white; padding: 20px; border-radius: 0; border: none">
-                                                        <h2 style="text-align: center;">¿Eres cliente MAF?</h2>
-                                                        <h5 style="text-align: center">¡Ingresa a Mi Portal Web MAF donde encontrarás toda la información que necesitas!</h5>
-                                                        <div style="display: flex">
-                                                            <img src="https://i.imgur.com/JVs2YBI.png" width="50%" style=" margin-top: 20px">
-                                                            <list style="font-size: 10px; margin-top: 20px">
-                                                                <li style="font-size: 10px">Consulta tus saldos</li>
-                                                                <li>Descarga tus estados de cuenta</li>
-                                                                <li>Realiza tus pagos</li>
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <!-- Columna más ancha para el formulario -->
+                                                                <div class="col-md-9">
+                                                                    <div class="row">
+                                                                        <div class="col-md-5">
+                                                                            <div class="mb-2">
+                                                                                <label for="tipoProducto" class="form-label">Tipo de documento *</label>
+                                                                                <select class="form-control" data-val="true" data-val-required="Seleccione el Tipo de Documento" id="cboTipoDocumento2" name="cboTipoDocumento" disabled style="font-size: 0.8vw"></select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-7">
+                                                                            <div class="mb-2">
+                                                                                <label for="nro_contrato" class="form-label">Número de documento *</label>
+                                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Número de documento inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de documento" id="txtNroDocumento2" name="txtNroDocumento" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">
+                                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNroDocumento" data-valmsg-replace="true" id="vldNroDocumento2"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="mb-3">
+                                                                                <label for="txtNombres" class="form-label">Nombres *</label>
+                                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-required="Ingrese su nombre o razón social" id="txtNombres" name="txtNombres" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">
+                                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNombres" data-valmsg-replace="true" id="vldNombres"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="mb-2">
+                                                                                <label for="txtApPaterno" class="form-label">Apellido Paterno *</label>
+                                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido paterno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido parterno o &#39;-&#39; si tiene razón social" id="txtApPaterno" name="txtApPaterno" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">
+                                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApPaterno" data-valmsg-replace="true" id="vldApPaterno"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="mb-3">
+                                                                                <label for="txtApMaterno" class="form-label">Apellido Materno</label>
+                                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido materno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido marterno o &#39;-&#39; si tiene razón social" id="txtApMaterno" name="txtApMaterno" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">
+                                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApMaterno" data-valmsg-replace="true" id="vldApMaterno"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-8">
+                                                                            <div class="mb-2">
+                                                                                <label for="txtCorreo" class="form-label">Correo electrónico *</label>
+                                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Correo inválido" data-val-regex-pattern="^([a-zA-Z0-9._+-]+)(@[a-zA-Z0-9-]+)(.[a-zA-Z]{2,4}){2,}$" data-val-required="Ingrese su e-mail" id="txtCorreo" name="txtCorreo" placeholder="" type="text" value="" style="font-size: 0.8vw">
+                                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtCorreo" data-valmsg-replace="true" id="vldCorreo"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="mb-3">
+                                                                                <label for="nro_dias" class="form-label">Celular *</label>
+                                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Teléfono inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de teléfono" id="txtTelefono" name="txtTelefono" placeholder="" type="text" value="" style="font-size: 0.8vw">
+                                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtTelefono" data-valmsg-replace="true" id="vldTelefono"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="mb-3">
+                                                                                <p style="font-size: 0.8vw">Si has cambiado tu correo electrónico o celular, es importante que los actualices, utilizaremos esta información para comunicarnos contigo y proporcionarte una respuesta oportuna a tu caso.</p>
+                                                                                <p style="font-size: 0.7vw">(*) Información obligatoria</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                    <div class="botones_paginacion">
+                                                                            <button type="button" class="btn_atras" onclick="showStep(1)" style=""><img class="img_paginador_atras" src="https://i.imgur.com/u9fPLN4.png">Atrás</button>
+                                                                            <button type="button" class="btn_continuar" id="btnContinuar2" onclick="nextTab()" style="float: right">Siguiente<img class="img_paginador_siguiente" src="https://i.imgur.com/NfgeFxw.png"></button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Columna más estrecha para la imagen -->
+                                                                <div class="col-md-3 d-flex flex-column" style="text-align: center; padding-top: 20px; justify-items: center; align-content: center;align-items: center">
+<!--                                                                    <div id="banner_detallanos" class="banner visible">-->
+<!--                                                                        <h3 style="color: red; font-weight: bold; font-size: 1.3vw">¡Soy Chat Mafito!</h3></br>-->
+<!--                                                                        <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="mafito" style="width:10vw;">-->
+<!--                                                                        <p style="font-size: 1vw; font-weight: bold">Y estoy aquí para resolver tus consultas.</p>-->
+<!--                                                                        <p style="font-size: 1vw">Me encuentras en el <br><span style="color: red; font-weight: bold"> Portal Web</span></p>-->
+<!--                                                                        <img src="https://i.imgur.com/gUr5rcH.png" alt="mafito" style="width:10vw;">-->
+<!--                                                                    </div>-->
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="mb-3">
+                                                                                <h5 style="text-align: center;">¿Eres cliente MAF?</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="mb-3">
+                                                                                <p style="text-align: center; font-size: 1vw">¡Ingresa a <span style="color: #8ed1fc; font-weight: bold">Mi Portal Web MAF</span> donde encontrarás toda la información que necesitas!</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="mb-3">
+                                                                                <img src="https://i.imgur.com/JVs2YBI.png"  style=" width:8vw ">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="mb-3">
+<!--                                                                                <list style="font-size: 10px; text-align: right">-->
+<!--                                                                                    <li>Contrato</li>-->
+<!--                                                                                    <li>Estado de cuenta</li>-->
+<!--                                                                                    <li>Cronograma de pagos</li>-->
+<!--                                                                                    <li>Carta de no adeudo</li>-->
+<!--                                                                                    <li>Renovación de póliza</li>-->
+<!--                                                                                </list>-->
+                                                                                <div style="font-size: 12px">
+                                                                                    <label>Contrato</label><br>
+                                                                                    <label>Estado de cuenta</label><br>
+                                                                                    <label>Cronograma de pagos</label><br>
+                                                                                    <label>Carta de no adeudo</label><br>
+                                                                                    <label>Renovación de póliza</label>
+                                                                                </div>
 
-                                                                <img src="https://i.imgur.com/hIHxsQV.png" style="margin-top: 100px; margin-left: 30px ;width: 70%">
-                                                            </list>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
+<!--                                                <div class="card_datos" style="font-size: 0.8vw">-->
+<!--                                                    <div class="card">-->
+<!--                                                        <div class="row">-->
+<!--                                                            <div class="form-group col-sm-4">-->
+<!--                                                                <label>Tipo de documento</label>-->
+<!--                                                                <select class="form-control" data-val="true" data-val-required="Seleccione el Tipo de Documento" id="cboTipoDocumento2" name="cboTipoDocumento" disabled style="font-size: 0.8vw"></select>-->
+<!--                                                            </div>-->
+<!--                                                            <div class="form-group col-sm-8">-->
+<!--                                                                <label>Número de documento</label>-->
+<!--                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Número de documento inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de documento" id="txtNroDocumento2" name="txtNroDocumento" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">-->
+<!--                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNroDocumento" data-valmsg-replace="true" id="vldNroDocumento2"></span>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="row">-->
+<!--                                                            <div class="form-group col-md-12" style="">-->
+<!--                                                                <label>Nombres</label>-->
+<!--                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-required="Ingrese su nombre o razón social" id="txtNombres" name="txtNombres" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">-->
+<!--                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNombres" data-valmsg-replace="true" id="vldNombres"></span>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="row">-->
+<!--                                                            <div class="form-group col-md-6" style="">-->
+<!--                                                                <label>Apellido Paterno</label>-->
+<!--                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido paterno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido parterno o &#39;-&#39; si tiene razón social" id="txtApPaterno" name="txtApPaterno" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">-->
+<!--                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApPaterno" data-valmsg-replace="true" id="vldApPaterno"></span>-->
+<!--                                                            </div>-->
+<!--                                                            <div class="form-group col-md-6" style="">-->
+<!--                                                                <label>Apellido Materno</label>-->
+<!--                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Apellido materno inválido" data-val-regex-pattern="^([ \u00c0-\u01ffa-zA-Z&#39;\-])+$" data-val-required="Ingrese su apellido marterno o &#39;-&#39; si tiene razón social" id="txtApMaterno" name="txtApMaterno" placeholder="" type="text" value="" disabled style="font-size: 0.8vw">-->
+<!--                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtApMaterno" data-valmsg-replace="true" id="vldApMaterno"></span>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="row">-->
+<!--                                                            <div class="form-group col-md-8">-->
+<!--                                                                <label>Correo electrónico</label>-->
+<!--                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 100 caracteres" data-val-length-max="100" data-val-regex="Correo inválido" data-val-regex-pattern="^([a-zA-Z0-9._+-]+)(@[a-zA-Z0-9-]+)(.[a-zA-Z]{2,4}){2,}$" data-val-required="Ingrese su e-mail" id="txtCorreo" name="txtCorreo" placeholder="" type="text" value="" style="font-size: 0.8vw">-->
+<!--                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtCorreo" data-valmsg-replace="true" id="vldCorreo"></span>-->
+<!--                                                            </div>-->
+<!--                                                            <div class="form-group col-md-4">-->
+<!--                                                                <label>Celular</label>-->
+<!--                                                                <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Teléfono inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de teléfono" id="txtTelefono" name="txtTelefono" placeholder="" type="text" value="" style="font-size: 0.8vw">-->
+<!--                                                                <span class="field-validation-valid text-danger validator" data-valmsg-for="txtTelefono" data-valmsg-replace="true" id="vldTelefono"></span>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="row">-->
+<!--                                                            <div class="form-group col-md-6">-->
+<!--                                                                <button type="button" class="btn_atras" onclick="showStep(1)" style="justify-content: flex-end"><img class="img_paginador_atras" src="https://i.imgur.com/u9fPLN4.png">Atrás</button>-->
+<!--                                                            </div>-->
+<!--                                                            <div class="form-group col-md-6">-->
+<!--                                                                <button type="button" class="btn_continuar" id="btnContinuar2" onclick="nextTab()" style="float:right">Siguiente<img class="img_paginador_siguiente" src="https://i.imgur.com/NfgeFxw.png"></button>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="card" style="width: 30%; background-color: red; color: white; padding: 20px; border-radius: 0; border: none">-->
+<!--                                                        <h2 style="text-align: center;">¿Eres cliente MAF?</h2>-->
+<!--                                                        <h5 style="text-align: center">¡Ingresa a Mi Portal Web MAF donde encontrarás toda la información que necesitas!</h5>-->
+<!--                                                        <div style="display: flex">-->
+<!--                                                            <img src="https://i.imgur.com/JVs2YBI.png" width="50%" style=" margin-top: 20px">-->
+<!--                                                            <list style="font-size: 10px; margin-top: 20px">-->
+<!--                                                                <li style="font-size: 10px">Consulta tus saldos</li>-->
+<!--                                                                <li>Descarga tus estados de cuenta</li>-->
+<!--                                                                <li>Realiza tus pagos</li>-->
+
+<!--                                                                <img src="https://i.imgur.com/hIHxsQV.png" style="margin-top: 100px; margin-left: 30px ;width: 70%">-->
+<!--                                                            </list>-->
+<!--                                                        </div>-->
+
+<!--                                                    </div>-->
+<!--                                                </div>-->
                                             </div>
 <!--                                            //Detallanos-->
                                             <div class="tab-pane fade" id="nav-caso" role="tabpanel" aria-labelledby="nav-caso-tab">
