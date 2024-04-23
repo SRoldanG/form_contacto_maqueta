@@ -1109,67 +1109,135 @@
                         <input data-val="true" data-val-number="El campo TipoCaso debe ser un número." data-val-required="Seleccione el tipo de caso" id="hdnTipoCaso" name="TipoCaso" type="hidden" value="0">
 
                         <div id="step1">
-                            <div class="card-group">
-                                <div class="card">
-                                    <div class="card_1">
-                                        <div class="card-body"  >
-                                            <table class="table">
-                                                <tr style="">
-                                                    <th scope="col">
-                                                        <div class="cuerpo1">
-                                                            <h3>Formulario Web</h3>
-                                                            <br>
-                                                            <p>¿Tienes alguna consulta o solicitud?</p>
-                                                            <p>Este es el lugar.</p>
+<!--                            <div class="card-group">-->
+<!--                                <div class="card">-->
+<!--                                    <div class="card_1">-->
+<!--                                        <div class="card-body"  >-->
+<!--                                            <table class="table">-->
+<!--                                                <tr style="">-->
+<!--                                                    <th scope="col">-->
+<!--                                                        <div class="cuerpo1">-->
+<!--                                                            <h3>Formulario Web</h3>-->
+<!--                                                            <br>-->
+<!--                                                            <p>¿Tienes alguna consulta o solicitud?</p>-->
+<!--                                                            <p>Este es el lugar.</p>-->
+<!--                                                        </div>-->
+<!--                                                    </th>-->
+<!--                                                    <th scope="col">-->
+<!--                                                        <img  class="img_mafita1" src="https://i.imgur.com/JVs2YBI.png" style="" >-->
+<!--                                                    </th>-->
+<!--                                                </tr>-->
+
+<!--                                            </table>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="card">-->
+<!--                                    <div class="card_2">-->
+<!--                                        <div class="card-body">-->
+<!--                                            <div >-->
+<!--                                                <h4 class="card-title">Identifícate ingresando tu número de documento</h4>-->
+<!--                                                <br>-->
+<!--                                                <div class="cuerpo2" style="">-->
+<!--                                                    <div class="form-group col-md-6">-->
+<!--                                                        <select class="form-control" data-val="true" data-val-required="Seleccione" id="cboTipoDocumento" name="cboTipoDocumento" style=""></select>-->
+<!--                                                        <span class="field-validation-valid text-danger validator" data-valmsg-for="cboTipoDocumento" data-valmsg-replace="true" id="vldTipoDocumento"></span>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="form-group col-md-6">-->
+<!--                                                        <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Número de documento inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de documento" id="txtNroDocumento" name="txtNroDocumento" placeholder="Número de documento" type="text" value="" style="">-->
+<!--                                                        <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNroDocumento" data-valmsg-replace="true" id="vldNroDocumento"></span>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <br>-->
+<!--                                                <div class="form-check">-->
+<!--                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onchange="toggleButton()">-->
+<!--                                                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                                                        He leído y acepto las condiciones de políticas de seguridad y privacidad.-->
+<!--                                                    </label>-->
+<!--                                                </div>-->
+<!--                                                <br>-->
+<!--                                                <button type="button" class="btn_continuar" id="btnContinuar"  onclick="showStep(2)"  disabled>Continuar</button>-->
+
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <div class="container mt-1" style="">
+                                <div class="card" style="border: none">
+                                    <div class="card-body" style="padding: 0px 5px 0px 12px">
+                                        <div class="row">
+                                            <!-- Columna más ancha para el formulario -->
+                                            <div class="col-md-6" style="background-color: #EB0A1E">
+                                                <div class="row">
+                                                    <div class="col-md-8 d-flex justify-content-center align-items-center" style="">
+                                                        <div class="contaniner_mt1" style="color: white">
+                                                            <h5 style="margin-bottom: 20px">Formulario Web</h5>
+                                                            <p style="font-size: 1.2vw; font-weight: inherit">¿Tienes alguna consulta o solicitud?</p>
+                                                            <span style="font-size: 1.2vw; font-weight: inherit">Este es el lugar.</span>
                                                         </div>
-                                                    </th>
-                                                    <th scope="col">
-                                                        <img  class="img_mafita1" src="https://i.imgur.com/JVs2YBI.png" style="" >
-                                                    </th>
-                                                </tr>
-
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card_2">
-                                        <div class="card-body">
-                                            <div >
-                                                <h4 class="card-title">Identifícate ingresando tu número de documento</h4>
-                                                <br>
-                                                <div class="cuerpo2" style="">
-                                                    <div class="form-group col-md-6">
-                                                        <select class="form-control" data-val="true" data-val-required="Seleccione" id="cboTipoDocumento" name="cboTipoDocumento" style=""></select>
-                                                        <span class="field-validation-valid text-danger validator" data-valmsg-for="cboTipoDocumento" data-valmsg-replace="true" id="vldTipoDocumento"></span>
                                                     </div>
-                                                    <div class="form-group col-md-6">
-                                                        <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Número de documento inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de documento" id="txtNroDocumento" name="txtNroDocumento" placeholder="Número de documento" type="text" value="" style="">
-                                                        <span class="field-validation-valid text-danger validator" data-valmsg-for="txtNroDocumento" data-valmsg-replace="true" id="vldNroDocumento"></span>
+                                                    <div class="col-md-4" style="justify-content: center;align-items: center; justify-items: center; align-content: center">
+                                                        <img style="padding: 20px"  class="img_mafita1" src="https://i.imgur.com/JVs2YBI.png" style="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Columna más estrecha para la imagen -->
+                                            <div class="col-md-6 flex-column" style="; padding: 50px;">
+                                                <!--                                                                    <div id="banner_detallanos" class="banner visible">-->
+                                                <!--                                                                        <h3 style="color: red; font-weight: bold; font-size: 1.3vw">¡Soy Chat Mafito!</h3></br>-->
+                                                <!--                                                                        <img src="https://i.imgur.com/xSrIJ9v.gif" class="img-fluid" alt="mafito" style="width:10vw;">-->
+                                                <!--                                                                        <p style="font-size: 1vw; font-weight: bold">Y estoy aquí para resolver tus consultas.</p>-->
+                                                <!--                                                                        <p style="font-size: 1vw">Me encuentras en el <br><span style="color: red; font-weight: bold"> Portal Web</span></p>-->
+                                                <!--                                                                        <img src="https://i.imgur.com/gUr5rcH.png" alt="mafito" style="width:10vw;">-->
+                                                <!--                                                                    </div>-->
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-2" style="text-align: justify">
+                                                           <h4>Identifícate ingresando tu número de documento </h4>
+                                                            <p style="font-size: 1vw">Recuerda que si representas a una persona jurídica, debes ingresar con el RUC de la empresa.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <div class="mb-2 d-flex">
+                                                            <select class="form-select" data-val="true" data-val-required="Seleccione" id="cboTipoDocumento" name="cboTipoDocumento" style=" font-size: 1vw"></select>
+                                                            <span class="field-validation-valid text-danger validator" data-valmsg-for="cboTipoDocumento" data-valmsg-replace="true" id="vldTipoDocumento"></span>
+                                                            <input class="form-control text-box single-line" data-val="true" data-val-length="Solo puede ingresar un máximo de 20 caracteres" data-val-length-max="20" data-val-regex="Número de documento inválido" data-val-regex-pattern="^[0-9]+$" data-val-required="Ingrese su número de documento" id="txtNroDocumento" name="txtNroDocumento" placeholder="Número de documento" type="text" value="" style="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="mb-2">
+                                                    <div class="form-check" style="">
+
+                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onchange="toggleButton()" style="font-size: 1vw">
+                                                        <label style="font-size: 1vw" class="form-check-label" for="flexCheckDefault" > He leído y acepto las condiciones de políticas de seguridad<br>y privacidad.</label>
+
+                                                    </div>
                                                     </div>
                                                 </div>
                                                 <br>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onchange="toggleButton()">
-                                                    <label class="form-check-label" for="flexCheckDefault">
-                                                        He leído y acepto las condiciones de políticas de seguridad y privacidad.
-                                                    </label>
+                                                <div class="row">
+                                                    <div class="mb-2">
+                                                        <button type="button" class="btn_continuar" id="btnContinuar"  style="width: 40%"  onclick="showStep(2)"  disabled ><span style="font-size: 1vw">Continuar</span></button>
+                                                    </div>
                                                 </div>
-                                                <br>
-                                                <button type="button" class="btn_continuar" id="btnContinuar"  onclick="showStep(2)"  disabled>Continuar</button>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
                         <!-- Pestaña 2: Información Adicional -->
                         <div id="step2" style="">
                             <div class="card" style="border: none">
                                 <div class="card_3">
-                                    <div class="card-body" style="">
+                                    <div class="card-body" style="padding: 0">
                                         <div class="barra" style="">Formulario Web</div>
                                         </br>
                                         <div>
@@ -1182,8 +1250,8 @@
                                     <!--TUS DATOS -->
                                         <div class="tab-content" id="nav-tabContent" style="">
                                             <div class="tab-pane fade show active" id="nav-datos" role="tabpanel" aria-labelledby="nav-datos-tab">
-                                                <div class="container mt-5" style="font-size: 0.8vw">
-                                                    <div class="card">
+                                                <div class="container mt-2" style="font-size: 0.8vw">
+                                                    <div class="card" style="border:none">
                                                         <div class="card-body">
                                                             <div class="row">
                                                                 <!-- Columna más ancha para el formulario -->
@@ -1389,8 +1457,8 @@
                                             </div>
 <!--                                            //Detallanos-->
                                             <div class="tab-pane fade" id="nav-caso" role="tabpanel" aria-labelledby="nav-caso-tab">
-                                                <div class="container mt-5" style="font-size: 0.8vw">
-                                                    <div class="card">
+                                                <div class="container mt-2" style="font-size: 0.8vw">
+                                                    <div class="card" style="border: none">
                                                         <div class="card-body">
                                                             <div class="row">
                                                                 <!-- Columna más ancha para el formulario -->
@@ -1495,6 +1563,8 @@ Solicitud*: Servicio adicional o exigencia <br> extra a la naturaleza del produc
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <button type="button" class="btn_atras" onclick="showStep(1)" style=""><img class="img_paginador_atras" src="https://i.imgur.com/u9fPLN4.png">Atrás</button>
+                                                                    <button type="button" class="btn_continuar" id="btnContinuar2" onclick="nextTab()" style="float: right">Siguiente<img class="img_paginador_siguiente" src="https://i.imgur.com/NfgeFxw.png"></button>
                                                                 </div>
                                                                 <!-- Columna más estrecha para la imagen -->
                                                                 <div class="col-md-3 d-flex flex-column" style="text-align: center; padding-top: 20px; justify-items: center; align-content: center;align-items: center">
@@ -1522,13 +1592,11 @@ Solicitud*: Servicio adicional o exigencia <br> extra a la naturaleza del produc
                                                         </div>
                                                     </div>
                                                 </div>
-                                                    </br>
-                                                    <button type="button" class="btn_atras" onclick="showStep(1)" style="font-size: 0.8vw">Atrás</button>
                                                 </div>
                                             </div>
 <!--                                            //Confirmacion-->
                                             <div class="tab-pane fade" id="nav-confirmacion" role="tabpanel" aria-labelledby="nav-confirmacion-tab">
-                                                <div class="container mt-5" style="font-size: 0.8vw; ">
+                                                <div class="container mt-2" style="font-size: 0.8vw; ">
                                                 <div class="card" style="background-image: url(https://i.imgur.com/MT9E4by.png); background-repeat: no-repeat">
                                                     <div class="card-body">
                                                         <div class="row">
@@ -1701,6 +1769,9 @@ Solicitud*: Servicio adicional o exigencia <br> extra a la naturaleza del produc
                                                                             </div>
                                                                         </div>
                                                                     </div>
+
+
+
                                                                 </div>
                                                             </div>
                                                             <!-- Columna más estrecha para la imagen -->
